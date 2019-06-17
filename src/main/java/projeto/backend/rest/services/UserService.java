@@ -4,6 +4,8 @@ import org.springframework.stereotype.Service;
 import projeto.backend.rest.dao.UserDAO;
 import projeto.backend.rest.model.Usuario;
 
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -26,6 +28,10 @@ public class UserService {
 
     public Usuario findByLogin(String userLogin) {
         return (userDAO.findByLogin(userLogin));
+    }
+
+    public List<Usuario> findAll() {
+        return userDAO.findAll();
     }
 
 }

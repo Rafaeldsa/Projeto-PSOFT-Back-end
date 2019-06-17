@@ -7,6 +7,8 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import projeto.backend.rest.model.Usuario;
 
+import java.util.List;
+
 
 @Repository
 public interface UserDAO extends JpaRepository<Usuario, String> {
@@ -15,4 +17,7 @@ public interface UserDAO extends JpaRepository<Usuario, String> {
 
     @Query(value="Select u from Usuario as u where u.login=:plogin")
     Usuario findByLogin(@Param("plogin") String login);
+
+    List<Usuario> findAll();
+
 }

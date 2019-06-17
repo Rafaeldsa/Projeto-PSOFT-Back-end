@@ -11,24 +11,35 @@ import java.util.List;
 @RestController
 @RequestMapping({"/v1/users"})
 public class UsuarioController {
-    private UserService userService;
+        private UserService userService;
 
-    UsuarioController(UserService userService) {
-        this.userService = userService;
-    }
-
-
-    @PostMapping(value = "/")
-    @ResponseBody
-    public ResponseEntity<Usuario> create(@RequestBody Usuario user) {
-
-        Usuario newUser = userService.create(user);
-
-        if (newUser == null) {
-            throw new InternalError("Something went wrong");
+        UsuarioController(UserService userService) {
+            this.userService = userService;
         }
 
-        return new ResponseEntity<Usuario>(newUser, HttpStatus.CREATED);
+
+        @PostMapping(value = "/")
+        @ResponseBody
+        public ResponseEntity<Usuario> create(@RequestBody Usuario user) {
+
+            Usuario newUser = userService.create(user);
+
+            if (newUser == null) {
+                throw new InternalError("Something went wrong");
+            }
+
+            return new ResponseEntity<Usuario>(newUser, HttpStatus.CREATED);
+        }
+
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
+    public ResponseEntity<List<Usuario>> findAll() {
+
+        try {
+            List<Usuario> result = userService.findAll();
+            return ResponseEntity.status(HttpStatus.OK).body(result);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
     }
 
 
