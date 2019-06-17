@@ -24,19 +24,19 @@ public class LoginController {
     public LoginResponse authenticate(@RequestBody Usuario user) throws ServletException {
 
         // Recupera o usuario
-        Usuario authUser = userService.findByLogin(user.getLogin());
+        Usuario authUser = userService.findByLogin(user.getPassword());
 
         // verificacoes
         if(authUser == null) {
             throw new ServletException("Usuario nao encontrado!");
         }
 
-        if(!authUser.getSenha().equals(user.getSenha())) {
+        if(!authUser.getPassword().equals(user.getPassword())) {
             throw new ServletException("Senha invalida!");
         }
 
         String token = Jwts.builder().
-                setSubject(authUser.getLogin()).
+                setSubject(authUser.getEmail()).
                 signWith(SignatureAlgorithm.HS512, TOKEN_KEY).
                 setExpiration(new Date(System.currentTimeMillis() + 1 * 60 * 1000))
                 .compact();

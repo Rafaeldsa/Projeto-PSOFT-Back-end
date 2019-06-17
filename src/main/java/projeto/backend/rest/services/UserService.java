@@ -16,8 +16,8 @@ public class UserService {
     }
 
     public Usuario create(Usuario usuario)  {
-        usuario.setLogin(usuario.getLogin().toLowerCase());
-        Usuario userVerify = findByLogin(usuario.getLogin());
+        usuario.setEmail(usuario.getEmail().toLowerCase());
+        Usuario userVerify = findByLogin(usuario.getEmail());
 
         if (!(userVerify == null)) {
             throw new RuntimeException("Email Já Cadastrado");
