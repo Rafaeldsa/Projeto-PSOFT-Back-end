@@ -31,4 +31,6 @@ public class UsuarioController {
         return new ResponseEntity<Usuario>(newUser, HttpStatus.CREATED);
     }
 
+
+
 }
