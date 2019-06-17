@@ -12,7 +12,7 @@ import javax.servlet.ServletException;
 import java.util.Date;
 
 @RestController
-@RequestMapping({"/auth"})
+@RequestMapping({"/v1/auth"})
 public class LoginController {
 
     private final String TOKEN_KEY = "banana";
