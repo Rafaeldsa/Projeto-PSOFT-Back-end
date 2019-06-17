@@ -15,7 +15,7 @@ public interface UserDAO extends JpaRepository<Usuario, String> {
 
     Usuario save(Usuario user);
 
-    @Query(value="Select u from Usuario as u where u.login=:plogin")
+    @Query(value = "Select u from Usuario as u where u.login=:plogin")
     Usuario findByLogin(@Param("plogin") String login);
 
     List<Usuario> findAll();

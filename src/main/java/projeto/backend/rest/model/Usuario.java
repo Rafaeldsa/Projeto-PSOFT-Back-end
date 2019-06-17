@@ -11,7 +11,7 @@ import javax.persistence.Id;
 public class Usuario {
     private String name;
     private String lastName;
-    
+
     @Id
     private String login;
 
