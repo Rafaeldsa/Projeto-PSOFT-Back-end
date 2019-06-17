@@ -9,23 +9,23 @@ import javax.persistence.Id;
 @Data
 @Entity
 public class Usuario {
-    private String name;
+    private String firstName;
     private String lastName;
 
     @Id
-    private String login;
+    private String email;
 
 
-    private String senha;
+    private String password;
 
     public Usuario() {
 
     }
 
-    public Usuario(String name, String lastName, String login, String senha) {
-        this.name = name;
+    public Usuario(String firstName, String lastName, String email, String password) {
+        this.firstName = firstName;
         this.lastName = lastName;
-        this.senha = senha;
-        this.login = login;
+        this.password = password;
+        this.email = email;
     }
 }
