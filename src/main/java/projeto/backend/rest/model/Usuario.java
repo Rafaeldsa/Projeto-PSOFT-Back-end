@@ -9,12 +9,13 @@ import javax.persistence.Id;
 @Data
 @Entity
 public class Usuario {
-
+    private String name;
+    private String lastName;
+    
     @Id
     private String login;
 
-    private String name;
-    private String lastName;
+
     private String senha;
 
     public Usuario() {
