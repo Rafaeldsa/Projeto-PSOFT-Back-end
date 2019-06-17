@@ -21,7 +21,7 @@ public class Usuario {
 
     }
 
-    public Usuario(String login, String name, String lastName, String senha) {
+    public Usuario(String name, String lastName, String login, String senha) {
         this.name = name;
         this.lastName = lastName;
         this.senha = senha;
