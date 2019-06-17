@@ -9,7 +9,7 @@ import projeto.backend.rest.services.UserService;
 import java.util.List;
 
 @RestController
-@RequestMapping({"/users"})
+@RequestMapping({"/v1/users"})
 public class UsuarioController {
     private UserService userService;
 
