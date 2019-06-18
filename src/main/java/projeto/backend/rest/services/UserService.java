@@ -16,6 +16,22 @@ public class UserService {
     }
 
     public Usuario create(Usuario usuario)  {
+        if(usuario.getFirstName() == null) {
+            throw new NullPointerException("Este campo não pode ser nulo!");
+        }
+
+        if(usuario.getLastName() == null) {
+            throw new NullPointerException("Este campo não pode ser nulo!");
+        }
+
+        if(usuario.getEmail() == null) {
+            throw new NullPointerException("Este campo não pode ser nulo!");
+        }
+
+        if(usuario.getPassword() == null) {
+            throw new NullPointerException("Este campo não pode ser nulo!");
+        }
+
         usuario.setEmail(usuario.getEmail().toLowerCase());
         Usuario userVerify = findByLogin(usuario.getEmail());
 
