@@ -28,21 +28,6 @@ public class UsuarioController {
                 throw new InternalError("Something went wrong");
             }
 
-            if(newUser.getFirstName() == null) {
-                throw new NullPointerException("Este campo não pode ser nulo!");
-            }
-
-            if(newUser.getLastName() == null) {
-                throw new NullPointerException("Este campo não pode ser nulo!");
-            }
-
-            if(newUser.getEmail() == null) {
-                throw new NullPointerException("Este campo não pode ser nulo!");
-            }
-
-            if(newUser.getPassword() == null) {
-                throw new NullPointerException("Este campo não pode ser nulo!");
-            }
 
             return new ResponseEntity<Usuario>(newUser, HttpStatus.CREATED);
         }
