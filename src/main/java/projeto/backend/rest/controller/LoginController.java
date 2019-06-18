@@ -24,7 +24,7 @@ public class LoginController {
     public LoginResponse authenticate(@RequestBody Usuario user) throws ServletException {
 
         // Recupera o usuario
-        Usuario authUser = userService.findByLogin(user.getPassword());
+        Usuario authUser = userService.findByLogin(user.getEmail());
 
         // verificacoes
         if(authUser == null) {

@@ -27,9 +27,7 @@ public class UsuarioController {
             if (newUser == null) {
                 throw new InternalError("Something went wrong");
             }
-
-
-            return new ResponseEntity<Usuario>(newUser, HttpStatus.CREATED);
+                return new ResponseEntity<Usuario>(newUser, HttpStatus.CREATED);
         }
 
     @RequestMapping(value = "/all", method = RequestMethod.GET)
