@@ -16,20 +16,20 @@ public class UserService {
     }
 
     public Usuario create(Usuario usuario)  {
-        if(usuario.getFirstName() == null) {
-            throw new NullPointerException("Este campo não pode ser nulo!");
+        if(usuario.getFirstName() == null || usuario.getFirstName().trim().equals("")) {
+            throw new NullPointerException("Campo Name não pode ser nulo ou vazio!");
         }
 
-        if(usuario.getLastName() == null) {
-            throw new NullPointerException("Este campo não pode ser nulo!");
+        if(usuario.getLastName() == null || usuario.getLastName().trim().equals("")) {
+            throw new NullPointerException("Campo Name não pode ser nulo ou vazio!");
         }
 
-        if(usuario.getEmail() == null) {
-            throw new NullPointerException("Este campo não pode ser nulo!");
+        if(usuario.getEmail() == null || usuario.getEmail().trim().equals("")) {
+            throw new NullPointerException("Campo E-mail não pode ser nulo ou vazio!");
         }
 
-        if(usuario.getPassword() == null) {
-            throw new NullPointerException("Este campo não pode ser nulo!");
+        if(usuario.getPassword() == null || usuario.getPassword().trim().equals("")) {
+            throw new NullPointerException("Campo Senha não pode ser nulo ou vazio!");
         }
 
         usuario.setEmail(usuario.getEmail().toLowerCase());
