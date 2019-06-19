@@ -12,6 +12,10 @@ public class DisciplinaService {
 
     private final DisciplinaDAO disciplinaDAO;
 
+    public List<Disciplina>  createAll(List<Disciplina> listDisciplina) {
+            return disciplinaDAO.saveAll(listDisciplina);
+    }
+
     DisciplinaService(DisciplinaDAO disciplinaDAO) {
         this.disciplinaDAO = disciplinaDAO;
     }
@@ -26,9 +30,9 @@ public class DisciplinaService {
 
     public List<Disciplina> finBySubstring(String substring) {
         List<Disciplina> disciplinas = disciplinaDAO.findAll();
-        List<Disciplina> result = new ArrayList<Disciplina>();
+        List<Disciplina> result = new ArrayList<>();
         for (Disciplina d : disciplinas) {
-            if(d.getName().contains(substring)) {
+            if(d.getNome().contains(substring)) {
                 result.add(d);
             }
         }

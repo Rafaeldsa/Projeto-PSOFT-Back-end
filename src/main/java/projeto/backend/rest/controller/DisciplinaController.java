@@ -49,5 +49,20 @@ public class DisciplinaController {
 
     }
 
+    @RequestMapping(value = "/createSubject")
+    public ResponseEntity<List<Disciplina>> create(@RequestBody List<Disciplina> listDisciplina) {
+        List<Disciplina> result = disciplinaService.createAll(listDisciplina);
+
+        if(listDisciplina.isEmpty()) {
+            throw new InternalError("Something went wrong");
+        }
+
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(result);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
+    }
+
 
 }

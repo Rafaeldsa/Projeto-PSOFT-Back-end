@@ -17,13 +17,13 @@ public class Disciplina {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String name;
+    private String nome;
 
     public Disciplina() {
     }
 
     public Disciplina(String name) {
-        this.name = name;
+        this.nome = name;
     }
 
 
