@@ -26,5 +26,8 @@ public class Disciplina {
         this.nome = name;
     }
 
-
+    @Override
+    public String toString() {
+        return this.id + " - " + this.nome;
+    }
 }

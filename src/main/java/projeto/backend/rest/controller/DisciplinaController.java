@@ -3,10 +3,7 @@ package projeto.backend.rest.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import projeto.backend.rest.model.Disciplina;
 import projeto.backend.rest.services.DisciplinaService;
 
@@ -34,7 +31,7 @@ public class DisciplinaController {
     }
 
     @RequestMapping(value = "/findSubjects")
-    public ResponseEntity<List<Disciplina>> findDisciplina(@RequestBody String substring) {
+    public ResponseEntity<List<Disciplina>> findDisciplina(@RequestParam(name="substring", required=false, defaultValue="") String substring){
 
         if (substring == null || substring.trim().equals("")) {
             throw new InternalError("Something went wrong");
