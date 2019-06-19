@@ -2,16 +2,19 @@ package projeto.backend.rest.services;
 
 import org.springframework.stereotype.Service;
 import projeto.backend.rest.dao.UserDAO;
+import projeto.backend.rest.model.SendMail;
 import projeto.backend.rest.model.Usuario;
 
+import java.io.FileNotFoundException;
 import java.util.List;
 
 @Service
 public class UserService {
 
     private final UserDAO userDAO;
+    private SendMail sendMail = new SendMail();
 
-    UserService(UserDAO userDAO) {
+    UserService(UserDAO userDAO)  {
         this.userDAO = userDAO;
     }
 
@@ -38,7 +41,7 @@ public class UserService {
         if (!(userVerify == null)) {
             throw new RuntimeException("Email Já Cadastrado");
         }
-
+        sendMail.sendMail("ucdbplatform@gmail.com",usuario.getEmail(), "Bem-vindo", "Bem-vindo a melhor plataforma UCDb!");
         return userDAO.save(usuario);
     }
 

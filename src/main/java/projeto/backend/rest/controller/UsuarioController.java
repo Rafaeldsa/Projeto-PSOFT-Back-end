@@ -3,6 +3,7 @@ package projeto.backend.rest.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import projeto.backend.rest.model.SendMail;
 import projeto.backend.rest.model.Usuario;
 import projeto.backend.rest.services.UserService;
 
@@ -12,6 +13,8 @@ import java.util.List;
 @RequestMapping({"/v1/users"})
 public class UsuarioController {
         private UserService userService;
+
+
 
         UsuarioController(UserService userService) {
             this.userService = userService;
