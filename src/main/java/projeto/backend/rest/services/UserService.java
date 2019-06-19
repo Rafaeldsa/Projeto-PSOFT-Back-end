@@ -3,7 +3,7 @@ package projeto.backend.rest.services;
 import org.springframework.stereotype.Service;
 import projeto.backend.rest.dao.UserDAO;
 
-import projeto.backend.rest.model.SendMail;
+
 import projeto.backend.rest.model.Usuario;
 
 import java.io.FileNotFoundException;
