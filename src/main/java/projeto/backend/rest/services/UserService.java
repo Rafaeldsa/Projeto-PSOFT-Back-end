@@ -13,7 +13,7 @@ import java.util.List;
 public class UserService {
 
     private final UserDAO userDAO;
-    //private SendMail sendMail = new SendMail();
+
 
     UserService(UserDAO userDAO)  {
         this.userDAO = userDAO;
