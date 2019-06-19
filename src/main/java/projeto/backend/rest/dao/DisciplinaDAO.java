@@ -18,8 +18,10 @@ public interface DisciplinaDAO extends JpaRepository<Disciplina, String> {
     <S extends Disciplina> List<S> saveAll(Iterable<S> entities);
 
     @Query(value = "Select d from Disciplina as d where d.id=:did")
-    Usuario findByLogin(@Param("did") long id);
+    Disciplina findById(@Param("did") long id);
 
 
     List<Disciplina> findAll();
+
+
 }
