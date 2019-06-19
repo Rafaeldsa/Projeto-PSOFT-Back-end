@@ -58,7 +58,7 @@ public class SendMail {
 
         //Cria um autenticador que sera usado a seguir
         SimpleAuth auth = null;
-        auth = new SimpleAuth ("ucdbplatform@gmail.com", "ucdbplatform");
+        auth = new SimpleAuth ("ucdbplatform@gmail.com", "ucdbpsoft");
 
         //Session - objeto que ira realizar a conexão com o servidor
         /*Como há necessidade de autenticação é criada uma autenticacao que
@@ -94,7 +94,7 @@ public class SendMail {
              *  2 - seu nome de usuario do gmail
              *  3 - sua senha do gmail
              */
-            tr.connect(mailSMTPServer, "ucdbplatform@gmail.com", "ucdbplatform");
+            tr.connect(mailSMTPServer, "ucdbplatform@gmail.com", "ucdbpsoft");
             msg.saveChanges(); // don't forget this
             //envio da mensagem
             tr.sendMessage(msg, msg.getAllRecipients());
