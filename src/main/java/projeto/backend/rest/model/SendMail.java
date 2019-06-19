@@ -1,6 +1,5 @@
 package projeto.backend.rest.model;
 
-import java.io.FileNotFoundException;
 import java.util.Properties;
 import javax.mail.Message;
 import javax.mail.Session;
@@ -10,9 +9,7 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;
 
-
 public class SendMail {
-
 
     private String mailSMTPServer;
     private String mailSMTPServerPort;
@@ -21,7 +18,7 @@ public class SendMail {
      * quando instanciar um Objeto ja sera atribuido o servidor SMTP do GMAIL
      * e a porta usada por ele
      */
-    public SendMail()  { //Para o GMAIL
+   public SendMail() { //Para o GMAIL
         mailSMTPServer = "smtp.gmail.com";
         mailSMTPServerPort = "465";
     }
@@ -29,7 +26,7 @@ public class SendMail {
      * caso queira mudar o servidor e a porta, so enviar para o contrutor
      * os valor como string
      */
-   public SendMail(String mailSMTPServer, String mailSMTPServerPort) throws FileNotFoundException { //Para outro Servidor
+    public SendMail(String mailSMTPServer, String mailSMTPServerPort) { //Para outro Servidor
         this.mailSMTPServer = mailSMTPServer;
         this.mailSMTPServerPort = mailSMTPServerPort;
     }
@@ -58,7 +55,7 @@ public class SendMail {
 
         //Cria um autenticador que sera usado a seguir
         SimpleAuth auth = null;
-        auth = new SimpleAuth ("ucdbplatform@gmail.com", "ucdbpsoft");
+        auth = new SimpleAuth ("ucdbplatform@gmail.com","ucdbpsoft");
 
         //Session - objeto que ira realizar a conexão com o servidor
         /*Como há necessidade de autenticação é criada uma autenticacao que
