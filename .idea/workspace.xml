@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4144b86-7917-4550-8d18-ab2b26bbc9ff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/dao/ComentarioDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/dao/NotaDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/dao/PerfilDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Comentario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Nota.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Perfil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/services/ComentarioService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/services/NotaService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/services/PerfilService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/DisciplinaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/DisciplinaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/dao/DisciplinaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/dao/DisciplinaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Disciplina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Disciplina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/services/DisciplinaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/services/DisciplinaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/backend/rest/controller/DisciplinaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/backend/rest/controller/DisciplinaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/backend/rest/services/DisciplinaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/backend/rest/services/DisciplinaService.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -36,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/DisciplinaController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="79" column="57" selection-start-line="79" selection-start-column="57" selection-end-line="79" selection-end-column="57" />
+            <state relative-caret-position="158">
+              <caret line="78" column="31" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -215,18 +199,18 @@
       <workItem from="1560916349703" duration="1198000" />
       <workItem from="1560951746409" duration="11559000" />
       <workItem from="1560978383006" duration="6330000" />
-      <workItem from="1561045560080" duration="11321000" />
+      <workItem from="1561045560080" duration="11851000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30408000" />
+    <option name="totallyTimeSpent" value="30938000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23782921" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23782921" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -235,7 +219,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.35993487" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35993487" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -498,8 +482,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/DisciplinaController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="79" column="57" selection-start-line="79" selection-start-column="57" selection-end-line="79" selection-end-column="57" />
+        <state relative-caret-position="158">
+          <caret line="78" column="31" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
