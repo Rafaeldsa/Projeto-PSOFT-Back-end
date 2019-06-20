@@ -3,10 +3,7 @@ package projeto.backend.rest.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Data
@@ -18,11 +15,13 @@ public class Disciplina {
     private long id;
 
     private String nome;
-
+    @OneToOne
+    private Perfil perfil;
     public Disciplina() {
     }
 
-    public Disciplina(String name) {
+    public Disciplina(String name, Perfil perfil) {
+        this.perfil = perfil;
         this.nome = name;
     }
 
