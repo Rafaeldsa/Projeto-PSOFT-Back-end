@@ -15,6 +15,7 @@ public interface DisciplinaDAO extends JpaRepository<Disciplina, String> {
 
     List<Disciplina> saveAll(Iterable disciplinaLista);
 
+
     Disciplina findById(long id);
 
 

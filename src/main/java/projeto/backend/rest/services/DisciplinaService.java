@@ -21,7 +21,7 @@ public class DisciplinaService {
     }
 
     public Disciplina findById(long disciplinaId) {
-        return (disciplinaDAO.findById(disciplinaId));
+        return disciplinaDAO.findById(disciplinaId);
     }
 
     public List<Disciplina> findAll() {
@@ -29,11 +29,10 @@ public class DisciplinaService {
     }
 
     public List<Disciplina> finBySubstring(String substring) {
-        String substr = substring.toLowerCase();
         List<Disciplina> disciplinas = disciplinaDAO.findAll();
         List<Disciplina> result = new ArrayList<>();
         for (Disciplina d : disciplinas) {
-            if(d.getNome().toLowerCase().contains(substring)) {
+            if(d.getNome().contains(substring)) {
                 result.add(d);
             }
         }
