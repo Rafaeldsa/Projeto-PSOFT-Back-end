@@ -76,7 +76,7 @@ public class DisciplinaController {
         }
     }
 
-    @RequestMapping(value = "/Perfis", method = RequestMethod.GET)
+    @RequestMapping(value = "/perfis", method = RequestMethod.GET)
     public ResponseEntity<List<Perfil>> findAllPerfil() {
         try {
             List<Perfil> result = perfilService.findAll();
