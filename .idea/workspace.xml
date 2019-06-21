@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4144b86-7917-4550-8d18-ab2b26bbc9ff" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/backend/BackendApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/BackendApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/DisciplinaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/DisciplinaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/dao/PerfilDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/dao/PerfilDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Comentario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Comentario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Perfil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Perfil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/TokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/TokenFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/services/DisciplinaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/services/DisciplinaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/services/PerfilService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/services/PerfilService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/backend/BackendApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/backend/BackendApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/backend/rest/controller/DisciplinaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/backend/rest/controller/DisciplinaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/backend/rest/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/backend/rest/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/backend/rest/dao/PerfilDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/backend/rest/dao/PerfilDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/backend/rest/model/Comentario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/backend/rest/model/Comentario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/backend/rest/model/Perfil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/backend/rest/model/Perfil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/backend/rest/model/TokenFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/backend/rest/model/TokenFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/backend/rest/services/PerfilService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/backend/rest/services/PerfilService.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -62,7 +45,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/DisciplinaController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="50" column="63" lean-forward="true" selection-start-line="50" selection-start-column="63" selection-end-line="50" selection-end-column="63" />
+              <caret line="50" column="61" lean-forward="true" selection-start-line="50" selection-start-column="61" selection-end-line="50" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -73,8 +56,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/services/DisciplinaService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+            <state relative-caret-position="221">
+              <caret line="42" column="48" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#627#628#0" expanded="true" />
@@ -92,15 +75,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/LoginController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -306,18 +280,18 @@
       <workItem from="1560916349703" duration="1198000" />
       <workItem from="1560951746409" duration="11559000" />
       <workItem from="1560978383006" duration="6330000" />
-      <workItem from="1561045560080" duration="27013000" />
+      <workItem from="1561045560080" duration="27600000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46100000" />
+    <option name="totallyTimeSpent" value="46687000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23782921" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23782921" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -326,7 +300,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.35993487" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35993487" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -598,7 +572,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/DisciplinaController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="50" column="63" lean-forward="true" selection-start-line="50" selection-start-column="63" selection-end-line="50" selection-end-column="63" />
+          <caret line="50" column="61" lean-forward="true" selection-start-line="50" selection-start-column="61" selection-end-line="50" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -607,8 +581,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/services/DisciplinaService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+        <state relative-caret-position="221">
+          <caret line="42" column="48" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#627#628#0" expanded="true" />
