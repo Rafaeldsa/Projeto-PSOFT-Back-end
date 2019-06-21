@@ -32,11 +32,9 @@ public class DisciplinaService {
         List<Disciplina> disciplinas = disciplinaDAO.findAll();
         List<Disciplina> result = new ArrayList<>();
         for (Disciplina d : disciplinas) {
-
             if(d.getNome().contains(substring)) {
                 result.add(d);
             }
-
         }
         return  result;
     }

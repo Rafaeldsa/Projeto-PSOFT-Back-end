@@ -24,7 +24,7 @@ public class Perfil {
     private List<Nota> notas;
 
     private  Double media;
-    private long qtdLikes;
+    private Integer qtdLikes;
 
     public Perfil(){
 
