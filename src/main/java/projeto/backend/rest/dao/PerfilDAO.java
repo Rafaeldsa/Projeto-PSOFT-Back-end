@@ -13,6 +13,7 @@ public interface PerfilDAO extends JpaRepository<Perfil, String> {
 
     List<Perfil> saveAll(Iterable perfilList);
 
+    Perfil findById(long id);
     Perfil save(Perfil perfil);
 
     List<Perfil> findAll();

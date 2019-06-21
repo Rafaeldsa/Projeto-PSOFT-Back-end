@@ -32,7 +32,10 @@ public class DisciplinaService {
         List<Disciplina> disciplinas = disciplinaDAO.findAll();
         List<Disciplina> result = new ArrayList<>();
         for (Disciplina d : disciplinas) {
-            if(d.getNome().contains(substring)) {
+            if(d.getId() == (Integer.parseInt(substring))) {
+                result.add(d);
+            }
+            else if(d.getNome().contains(substring)) {
                 result.add(d);
             }
         }

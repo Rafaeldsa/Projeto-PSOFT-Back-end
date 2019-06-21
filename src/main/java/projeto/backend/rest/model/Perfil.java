@@ -15,7 +15,6 @@ public class Perfil {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-
     private String disciplina;
     @OneToMany
     private List<Comentario> comentarios;
@@ -24,6 +23,8 @@ public class Perfil {
     @OneToMany
     private List<Nota> notas;
 
+    private  Double media;
+    private long qtdLikes;
 
     public Perfil(){
 
@@ -34,8 +35,21 @@ public class Perfil {
         this.comentarios = comentarios;
         this.like = like;
         this.notas = notas;
+        this.media = 0.0;
+        qtdLikes = 0;
     }
 
-
+    public Double getMedia(List<Nota> notas) {
+        notas = this.notas;
+        Double soma = 0.0;
+        if(notas.isEmpty()) {
+            throw new InternalError("Lista notas está vazia");
+        }
+        for(Nota n : notas) {
+           soma += n.getNota();
+        }
+        this.media = soma / notas.size();
+        return  this.media;
+    }
 
 }
