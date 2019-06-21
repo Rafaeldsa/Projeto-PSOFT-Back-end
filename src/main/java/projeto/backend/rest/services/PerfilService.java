@@ -33,7 +33,9 @@ public class PerfilService {
 
         return perfilDAO.saveAll(perfis);
     }
-
+    public Perfil findById(long Id) {
+        return perfilDAO.findById(Id);
+    }
     public List<Perfil> findAll() {
         return perfilDAO.findAll();
     }

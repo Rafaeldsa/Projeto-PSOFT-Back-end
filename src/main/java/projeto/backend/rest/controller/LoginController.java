@@ -15,7 +15,7 @@ import java.util.Date;
 @RequestMapping({"/v1/auth"})
 public class LoginController {
 
-    private final String TOKEN_KEY = "banana";
+    private final String TOKEN_KEY = "ninja";
 
     @Autowired
     private UserService userService;

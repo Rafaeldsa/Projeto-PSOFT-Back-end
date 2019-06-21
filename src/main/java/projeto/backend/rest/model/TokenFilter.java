@@ -37,4 +37,20 @@ public class TokenFilter extends GenericFilterBean {
         chain.doFilter(request, response);
     }
 
+    public String getAuth( String auth)  throws ServletException{
+
+
+        if (auth == null || !auth.startsWith("Bearer ")) {
+            throw new InternalError("Token inexistente");
+        }
+
+        // Extraindo o token do cabecalho.
+        String token = auth.substring(7);
+
+        try {
+            return Jwts.parser().setSigningKey("ninja").parseClaimsJws(token).getBody().getSubject();
+        } catch (SignatureException e) {
+            throw new ServletException("Token invalido ou expirado!");
+        }
+    }
 }
