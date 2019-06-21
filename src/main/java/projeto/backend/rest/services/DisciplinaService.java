@@ -12,8 +12,8 @@ public class DisciplinaService {
 
     private final DisciplinaDAO disciplinaDAO;
 
-    public List<Disciplina>  createAll(List<Disciplina> listDisciplina) {
-            return disciplinaDAO.saveAll(listDisciplina);
+    public List<Disciplina> createAll(List<Disciplina> listDisciplina) {
+        return disciplinaDAO.saveAll(listDisciplina);
     }
 
     DisciplinaService(DisciplinaDAO disciplinaDAO) {
@@ -32,12 +32,19 @@ public class DisciplinaService {
         List<Disciplina> disciplinas = disciplinaDAO.findAll();
         List<Disciplina> result = new ArrayList<>();
         for (Disciplina d : disciplinas) {
-            if(d.getNome().contains(substring)) {
+            try {
+                if (d.getId() == (Integer.parseInt(substring))) {
+                    result.add(d);
+                }
+            } catch (Exception ignored) {}
+
+            if (d.getNome().contains(substring)) {
                 result.add(d);
             }
         }
-        return  result;
-    }
+
+        return result;
+}
 }
 
 
