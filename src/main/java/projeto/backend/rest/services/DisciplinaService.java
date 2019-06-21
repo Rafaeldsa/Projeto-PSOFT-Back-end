@@ -32,16 +32,11 @@ public class DisciplinaService {
         List<Disciplina> disciplinas = disciplinaDAO.findAll();
         List<Disciplina> result = new ArrayList<>();
         for (Disciplina d : disciplinas) {
-            try {
-            if(d.getId() == (Integer.parseInt(substring))) {
+
+            if(d.getNome().contains(substring)) {
                 result.add(d);
             }
-            else if(d.getNome().contains(substring)) {
-                result.add(d);
-            }
-        } catch (Exception e) {
-                throw new InternalError("opa!");
-            }
+
         }
         return  result;
     }
