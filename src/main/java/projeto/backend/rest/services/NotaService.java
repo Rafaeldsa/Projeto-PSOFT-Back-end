@@ -16,6 +16,10 @@ public class NotaService {
         this.notaDAO = notaDAO;
     }
 
+    public Nota create(Nota nota)
+    {
+        return notaDAO.save(nota);
+    }
     public Nota findById(long notaId) {
         return (notaDAO.findById(notaId));
     }

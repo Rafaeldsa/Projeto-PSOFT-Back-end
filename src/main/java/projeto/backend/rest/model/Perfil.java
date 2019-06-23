@@ -4,6 +4,7 @@ package projeto.backend.rest.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -34,22 +35,26 @@ public class Perfil {
         this.disciplina = disciplina;
         this.comentarios = comentarios;
         this.like = like;
-        this.notas = notas;
+        this.notas = new ArrayList<>();
         this.media = 0.0;
         qtdLikes = 0;
     }
 
-    public Double getMedia(List<Nota> notas) {
-        notas = this.notas;
+    public Double getMedia() {
+
         Double soma = 0.0;
-        if(notas.isEmpty()) {
+       /* if(this.notas.isEmpty()) {
             throw new InternalError("Lista notas está vazia");
-        }
-        for(Nota n : notas) {
+        }*/
+        for(Nota n : this.notas) {
            soma += n.getNota();
         }
-        this.media = soma / notas.size();
+        this.media = soma / this.notas.size();
         return  this.media;
     }
 
+
+    public void setNotas(Nota nota) {
+        this.notas.add(nota);
+    }
 }

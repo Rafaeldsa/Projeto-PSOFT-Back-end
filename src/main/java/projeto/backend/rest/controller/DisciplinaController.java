@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import projeto.backend.rest.model.*;
 import projeto.backend.rest.services.DisciplinaService;
+import projeto.backend.rest.services.NotaService;
 import projeto.backend.rest.services.PerfilService;
 import projeto.backend.rest.services.UserService;
 
@@ -21,11 +22,13 @@ public class DisciplinaController {
     private UserService userService;
     private DisciplinaService disciplinaService;
     private PerfilService perfilService;
+    private NotaService notaService;
 
     DisciplinaController(DisciplinaService disciplinaService, PerfilService perfilService, UserService userService)  {
         this.perfilService = perfilService;
         this.disciplinaService = disciplinaService;
         this.userService = userService;
+        this.notaService = notaService;
     }
 
     @RequestMapping(value = "/allSubjects", method = RequestMethod.GET)
@@ -93,15 +96,16 @@ public class DisciplinaController {
     }
 
     @PostMapping(value = "/addNota")
-    public ResponseEntity<Perfil> adicionaNota(@RequestBody long id, @RequestBody Double nota, @RequestHeader("authorization") String authorization)throws ServletException
+    public ResponseEntity<Perfil> adicionaNota(@RequestBody long id, @RequestBody Double nota, @RequestHeader(name="authorization", required = false, defaultValue = "") String authorization) throws  ServletException
     {
-        TokenFilter tk = new TokenFilter();
-        Perfil p = perfilService.findById(id);
-        String userEmail = tk.getAuth(authorization);
-        Usuario u = userService.findByLogin(userEmail);
-        List<Nota> notas = p.getNotas();
-        notas.add(new Nota(u, nota));
-        p.getMedia(notas);
+
+            TokenFilter tk = new TokenFilter();
+            Perfil p = perfilService.findById(id);
+            String uEmail = tk.getAuth(authorization);
+            Usuario u = userService.findByLogin(uEmail);
+            Nota n = new Nota(u, nota);
+            p.setNotas(n);
+            p.getMedia();
         try {
             return ResponseEntity.status(HttpStatus.OK).body(p);
         } catch (Exception e) {
@@ -109,6 +113,16 @@ public class DisciplinaController {
         }
 
 
+    }
+    @GetMapping(value="/{id}")
+    public ResponseEntity<Perfil> findById(@PathVariable long id) {
+        Perfil perfil = perfilService.findById(id);
+
+        if (perfil == null) {
+            throw new RuntimeException("Perfil not found");
+        }
+
+        return new ResponseEntity<Perfil>(perfil, HttpStatus.OK);
     }
 
 }
