@@ -57,4 +57,11 @@ public class Perfil {
     public void setNotas(Nota nota) {
         this.notas.add(nota);
     }
+
+    public void addLike() {
+        this.qtdLikes++;
+    }
+    public void retiraLike() {
+        this.qtdLikes--;
+    }
 }
