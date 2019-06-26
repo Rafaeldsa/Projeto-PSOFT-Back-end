@@ -15,6 +15,7 @@ public class Nota {
     private long id;
 
     @OneToOne
+
     private Usuario usuario;
 
     private Double nota;
