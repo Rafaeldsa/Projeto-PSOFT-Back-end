@@ -105,7 +105,7 @@ public class DisciplinaController {
 
         return new ResponseEntity<Perfil>(perfil, HttpStatus.OK);
     }
-
+/*
     @RequestMapping(value="/addComentario")
     public ResponseEntity<String> comentar(@RequestParam(name="id", required = false, defaultValue = "") int id, @RequestBody Comentario comentario , @RequestHeader(name="authorization", required = false, defaultValue = "") String authorization) throws  ServletException {
         ZonedDateTime date = ZonedDateTime.now(ZoneId.of("America/Sao_Paulo"));
@@ -129,7 +129,7 @@ public class DisciplinaController {
         }
 
     }
-
+*/
     @PostMapping(value = "/like")
     public ResponseEntity<Perfil> darLike(@RequestBody long id, @RequestBody boolean like, @RequestHeader(name="authorization", required = false, defaultValue = "") String authorization) throws  ServletException {
 
