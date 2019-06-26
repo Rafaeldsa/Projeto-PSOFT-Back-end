@@ -74,7 +74,7 @@ public class DisciplinaController {
         }
     }
 
-    @PostMapping(value = "/")
+    @PostMapping(value = "/criaPerfil")
     public ResponseEntity<List<Perfil>> createPerfil() {
         List<Perfil> perfis = perfilService.createAll();
 
