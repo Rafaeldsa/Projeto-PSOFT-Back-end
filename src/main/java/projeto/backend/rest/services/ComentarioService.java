@@ -15,6 +15,9 @@ public class ComentarioService {
         this.comentarioDAO = comentarioDAO;
     }
 
+    public Comentario save(Comentario comentario) {
+        return comentarioDAO.save(comentario);
+    }
     public Comentario findById(long comentarioId) {
         return (comentarioDAO.findById(comentarioId));
     }

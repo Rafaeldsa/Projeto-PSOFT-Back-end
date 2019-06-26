@@ -2,17 +2,16 @@ package projeto.backend.rest.model;
 
 import lombok.Data;
 
+
+import java.time.ZonedDateTime;
 import javax.persistence.*;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
+import java.time.ZoneId;
 
 
 @Data
 @Entity
 public class Comentario {
-
-   private final Calendar c = Calendar.getInstance();
 
 
    @Id
@@ -23,7 +22,8 @@ public class Comentario {
    private Usuario usuario;
 
    private String comentario;
-   private Date data;
+   private String date;
+   private String hora;
 
    @OneToMany
    private List<Comentario> comentarioDocomentario;
@@ -31,14 +31,12 @@ public class Comentario {
    public Comentario(){
 
    }
-   public Comentario(String comentario, List<Comentario> comentarioDocomentario, Usuario usuario) {
+   public Comentario(String comentario, List<Comentario> comentarioDocomentario, Usuario usuario, String data, String hora) {
       this.comentarioDocomentario = comentarioDocomentario;
       this.comentario = comentario;
-      this.data = c.getTime();
+      this.date = data;
+      this.hora = hora;
       this.usuario = usuario;
    }
-
-
-
 
 }

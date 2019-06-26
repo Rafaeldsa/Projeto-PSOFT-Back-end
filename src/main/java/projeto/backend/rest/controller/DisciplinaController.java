@@ -1,18 +1,18 @@
 package projeto.backend.rest.controller;
 
 
-import org.apache.catalina.User;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import projeto.backend.rest.model.*;
-import projeto.backend.rest.services.DisciplinaService;
-import projeto.backend.rest.services.NotaService;
-import projeto.backend.rest.services.PerfilService;
-import projeto.backend.rest.services.UserService;
+import projeto.backend.rest.services.*;
 
 import javax.servlet.ServletException;
-import java.util.ArrayList;
+
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @RestController
@@ -22,14 +22,16 @@ public class DisciplinaController {
     private UserService userService;
     private DisciplinaService disciplinaService;
     private PerfilService perfilService;
+    private ComentarioService comentarioService;
 
-    DisciplinaController(DisciplinaService disciplinaService, PerfilService perfilService, UserService userService)  {
+    DisciplinaController(DisciplinaService disciplinaService, PerfilService perfilService, UserService userService, ComentarioService comentarioService)  {
         this.perfilService = perfilService;
         this.disciplinaService = disciplinaService;
         this.userService = userService;
+        this.comentarioService = comentarioService;
     }
 
-    @RequestMapping(value = "/allSubjects", method = RequestMethod.GET)
+    @GetMapping(value = "/allSubjects")
     public ResponseEntity<List<Disciplina>> findAllSubject() {
 
         try {
@@ -40,7 +42,7 @@ public class DisciplinaController {
         }
     }
 
-    @RequestMapping(value = "/findSubjects")
+    @GetMapping(value = "/findSubjects")
     public ResponseEntity<List<Disciplina>> findDisciplina(@RequestParam(name="substring", required=false, defaultValue="") String substring){
 
         if (substring == null || substring.trim().equals("")) {
@@ -57,7 +59,7 @@ public class DisciplinaController {
 
     }
 
-    @RequestMapping(value = "/createSubject")
+    @PostMapping(value = "/createSubject")
     public ResponseEntity<List<Disciplina>> create(@RequestBody List<Disciplina> listDisciplina) {
         List<Disciplina> result = disciplinaService.createAll(listDisciplina);
 
@@ -72,7 +74,7 @@ public class DisciplinaController {
         }
     }
 
-    @RequestMapping(value = "/")
+    @PostMapping(value = "/")
     public ResponseEntity<List<Perfil>> createPerfil() {
         List<Perfil> perfis = perfilService.createAll();
 
@@ -83,7 +85,7 @@ public class DisciplinaController {
         }
     }
 
-    @RequestMapping(value = "/perfis", method = RequestMethod.GET)
+    @GetMapping(value = "/perfis")
     public ResponseEntity<List<Perfil>> findAllPerfil() {
         try {
             List<Perfil> result = perfilService.findAll();
@@ -93,7 +95,7 @@ public class DisciplinaController {
         }
     }
     
-    @RequestMapping(value="/getPerfil")
+    @GetMapping(value="/getPerfil")
     public ResponseEntity<Perfil> findById(@RequestParam(name="id", required = false, defaultValue = "") long id) {
         Perfil perfil = perfilService.findById(id);
 
@@ -102,6 +104,28 @@ public class DisciplinaController {
         }
 
         return new ResponseEntity<Perfil>(perfil, HttpStatus.OK);
+    }
+
+    @RequestMapping(value="/addComentario")
+    public ResponseEntity<Comentario> comentar(@RequestBody Comentario comentario , @RequestHeader(name="authorization", required = false, defaultValue = "") String authorization) throws  ServletException {
+        ZonedDateTime date = ZonedDateTime.now(ZoneId.of("America/Sao_Paulo"));
+        String data = DateTimeFormatter.ofPattern("dd/MM/yyyy").format(date);
+        String hora = DateTimeFormatter.ofPattern("hh:mm").format(date);
+        TokenFilter tk = new TokenFilter();
+        String uEmail = tk.getAuth(authorization);
+        Usuario u = userService.findByLogin(uEmail);
+        Comentario c = comentario;
+        c.setUsuario(u);
+        c.setDate(data);
+        c.setHora(hora);
+        comentarioService.save(c);
+
+        try {
+            return new ResponseEntity<Comentario>(comentario, HttpStatus.OK);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
+
     }
 
     @PostMapping(value = "/like")
@@ -121,12 +145,13 @@ public class DisciplinaController {
                 p.getLike().remove(u);
                 p.retiraLike();
             }
-
         try {
             return ResponseEntity.status(HttpStatus.OK).body(p);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
+
+
 
     }
 }
