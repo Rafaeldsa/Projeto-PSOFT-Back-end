@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
+import projeto.backend.rest.model.TokenFilter;
 
 
 @SpringBootApplication
@@ -21,6 +22,18 @@ public class BackendApplication {
 		FilterRegistrationBean bean = new FilterRegistrationBean(new CorsFilter(source));
 		bean.setOrder(0);
 		return bean;
+	}
+
+	@Bean
+	public FilterRegistrationBean filterJwt() {
+		FilterRegistrationBean filterRb = new FilterRegistrationBean();
+		filterRb.setFilter(new TokenFilter());
+		filterRb.addUrlPatterns("/v1/disciplina/getPerfil");
+		filterRb.addUrlPatterns("/v1/disciplina/addComentario");
+		filterRb.addUrlPatterns("/v1/disciplina/like");
+
+
+		return filterRb;
 	}
 
 	public static void main(String[] args) {
