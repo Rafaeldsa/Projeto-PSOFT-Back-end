@@ -13,6 +13,7 @@ import projeto.backend.rest.model.TokenFilter;
 @SpringBootApplication
 public class BackendApplication {
 
+
 	@Bean
 	public FilterRegistrationBean corsFilter() {
 		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
@@ -23,7 +24,7 @@ public class BackendApplication {
 		bean.setOrder(0);
 		return bean;
 	}
-
+	/*
 	@Bean
 	public FilterRegistrationBean filterJwt() {
 		FilterRegistrationBean filterRb = new FilterRegistrationBean();
@@ -35,7 +36,7 @@ public class BackendApplication {
 
 		return filterRb;
 	}
-
+	*/
 	public static void main(String[] args) {
 
 		SpringApplication.run(BackendApplication.class, args);
