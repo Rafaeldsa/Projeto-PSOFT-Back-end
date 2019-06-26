@@ -1,18 +1,15 @@
 package projeto.backend.rest.controller;
 
 
-import org.apache.catalina.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import projeto.backend.rest.model.*;
 import projeto.backend.rest.services.DisciplinaService;
-import projeto.backend.rest.services.NotaService;
 import projeto.backend.rest.services.PerfilService;
 import projeto.backend.rest.services.UserService;
 
 import javax.servlet.ServletException;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -22,13 +19,11 @@ public class DisciplinaController {
     private UserService userService;
     private DisciplinaService disciplinaService;
     private PerfilService perfilService;
-    private NotaService notaService;
 
     DisciplinaController(DisciplinaService disciplinaService, PerfilService perfilService, UserService userService)  {
         this.perfilService = perfilService;
         this.disciplinaService = disciplinaService;
-        this.userService = userService;
-        this.notaService = notaService;
+        this.userService = userService;;
     }
 
     @RequestMapping(value = "/allSubjects", method = RequestMethod.GET)
@@ -94,9 +89,9 @@ public class DisciplinaController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
     }
-    
+
     @RequestMapping(value="/getPerfil")
-    public ResponseEntity<Perfil> findById(@RequestParam(name="id", required = false, defaultValue = "") long id) {
+    public ResponseEntity<Perfil> findById(@RequestParam(name="id", required = false, defaultValue = "") int id) {
         Perfil perfil = perfilService.findById(id);
 
         if (perfil == null) {
