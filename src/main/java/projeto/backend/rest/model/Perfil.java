@@ -40,4 +40,8 @@ public class Perfil {
     public void retiraLike() {
         this.qtdLikes--;
     }
+
+    public void setComentarios(Comentario c) {
+        this.comentarios.add(c);
+    }
 }
