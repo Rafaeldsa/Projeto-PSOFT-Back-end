@@ -94,28 +94,9 @@ public class DisciplinaController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
     }
-
-    @PostMapping(value = "/addNota")
-    public ResponseEntity<Perfil> adicionaNota(@RequestBody long id, @RequestBody Double nota, @RequestHeader(name="authorization", required = false, defaultValue = "") String authorization) throws  ServletException
-    {
-
-            TokenFilter tk = new TokenFilter();
-            Perfil p = perfilService.findById(id);
-            String uEmail = tk.getAuth(authorization);
-            Usuario u = userService.findByLogin(uEmail);
-            Nota n = new Nota(u, nota);
-            p.setNotas(n);
-            p.setMedia(p.getMedia());
-        try {
-            return ResponseEntity.status(HttpStatus.OK).body(p);
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
-        }
-
-
-    }
-    @GetMapping(value="/{id}")
-    public ResponseEntity<Perfil> findById(@PathVariable long id) {
+    
+    @RequestMapping(value="/getPerfil")
+    public ResponseEntity<Perfil> findById(@RequestParam(name="id", required = false, defaultValue = "") long id) {
         Perfil perfil = perfilService.findById(id);
 
         if (perfil == null) {

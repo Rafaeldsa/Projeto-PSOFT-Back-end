@@ -17,7 +17,9 @@ public class PerfilService {
         this.disciplinaService = disciplinaService;
         this.perfilDAO = perfilDAO;
     }
-
+    public Perfil save(Perfil p){
+        return perfilDAO.save(p);
+    }
     public List<Perfil>  createAll() {
         List<Disciplina> listaDisciplina = disciplinaService.findAll();
         List<Comentario> comentarios = new ArrayList<>();
