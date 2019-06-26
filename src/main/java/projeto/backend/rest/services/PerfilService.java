@@ -24,10 +24,9 @@ public class PerfilService {
         List<Disciplina> listaDisciplina = disciplinaService.findAll();
         List<Comentario> comentarios = new ArrayList<>();
         List<Usuario> likes = new ArrayList<>();
-        List<Nota> notas = new ArrayList<>();
         List<Perfil> perfis = new ArrayList<>();
         for(Disciplina d : listaDisciplina) {
-            Perfil p = new Perfil(d.getNome(), comentarios, likes, notas);
+            Perfil p = new Perfil(d.getNome(), comentarios, likes);
             perfis.add(p);
             disciplinaService.findById(d.getId()).setPerfil(p);
 

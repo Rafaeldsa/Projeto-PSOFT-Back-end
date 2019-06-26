@@ -22,13 +22,11 @@ public class DisciplinaController {
     private UserService userService;
     private DisciplinaService disciplinaService;
     private PerfilService perfilService;
-    private NotaService notaService;
 
     DisciplinaController(DisciplinaService disciplinaService, PerfilService perfilService, UserService userService)  {
         this.perfilService = perfilService;
         this.disciplinaService = disciplinaService;
         this.userService = userService;
-        this.notaService = notaService;
     }
 
     @RequestMapping(value = "/allSubjects", method = RequestMethod.GET)
