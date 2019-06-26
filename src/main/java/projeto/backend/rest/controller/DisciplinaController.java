@@ -105,7 +105,7 @@ public class DisciplinaController {
             Usuario u = userService.findByLogin(uEmail);
             Nota n = new Nota(u, nota);
             p.setNotas(n);
-            p.getMedia();
+            p.setMedia(p.getMedia());
         try {
             return ResponseEntity.status(HttpStatus.OK).body(p);
         } catch (Exception e) {
