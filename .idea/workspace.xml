@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4144b86-7917-4550-8d18-ab2b26bbc9ff" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/DisciplinaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/DisciplinaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Perfil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Perfil.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -36,8 +34,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/DisciplinaController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="446">
-              <caret line="152" column="9" lean-forward="true" selection-start-line="152" selection-start-column="9" selection-end-line="152" selection-end-column="9" />
+            <state relative-caret-position="431">
+              <caret line="131" column="2" selection-start-line="131" selection-start-column="2" selection-end-line="131" selection-end-column="2" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -293,12 +291,12 @@
       <workItem from="1561297428460" duration="6067000" />
       <workItem from="1561510385926" duration="624000" />
       <workItem from="1561563002111" duration="8120000" />
-      <workItem from="1561603502283" duration="1070000" />
+      <workItem from="1561603502283" duration="1750000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75341000" />
+    <option name="totallyTimeSpent" value="76021000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
@@ -313,7 +311,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.35993487" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35993487" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -586,8 +584,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/DisciplinaController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="152" column="9" lean-forward="true" selection-start-line="152" selection-start-column="9" selection-end-line="152" selection-end-column="9" />
+        <state relative-caret-position="431">
+          <caret line="131" column="2" selection-start-line="131" selection-start-column="2" selection-end-line="131" selection-end-column="2" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
