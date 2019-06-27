@@ -26,10 +26,10 @@ public class TokenFilter extends GenericFilterBean {
         }
 
         // Extraindo apenas o token do cabecalho.
-        String token = header.substring(7);
+        String authorization = header.substring(7);
 
         try {
-            Jwts.parser().setSigningKey("ninja").parseClaimsJws(token).getBody();
+            Jwts.parser().setSigningKey("ninja").parseClaimsJws(authorization).getBody();
         }catch(SignatureException e) {
             throw new ServletException("Token invalido ou expirado!");
         }
@@ -45,10 +45,10 @@ public class TokenFilter extends GenericFilterBean {
         }
 
         // Extraindo o token do cabecalho.
-        String token = auth.substring(7);
+        String authorization = auth.substring(7);
 
         try {
-            return Jwts.parser().setSigningKey("ninja").parseClaimsJws(token).getBody().getSubject();
+            return Jwts.parser().setSigningKey("ninja").parseClaimsJws(authorization).getBody().getSubject();
         } catch (SignatureException e) {
             throw new ServletException("Token invalido ou expirado!");
         }

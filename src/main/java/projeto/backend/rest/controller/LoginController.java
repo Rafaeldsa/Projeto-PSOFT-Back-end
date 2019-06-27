@@ -35,13 +35,13 @@ public class LoginController {
             throw new ServletException("Senha invalida!");
         }
 
-        String token = Jwts.builder().
+        String authorization = Jwts.builder().
                 setSubject(authUser.getEmail()).
                 signWith(SignatureAlgorithm.HS512, TOKEN_KEY).
                 setExpiration(new Date(System.currentTimeMillis() + 1 * 60 * 1000000))
                 .compact();
 
-        return new LoginResponse(token);
+        return new LoginResponse(authorization);
 
 
     }
