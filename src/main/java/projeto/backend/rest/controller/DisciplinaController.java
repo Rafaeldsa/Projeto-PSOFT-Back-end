@@ -129,25 +129,24 @@ public class DisciplinaController {
         }
 
     }
-/*
+
     @PostMapping(value = "/like")
-    public ResponseEntity<boolean> darLike(@RequestParam(name="id", required = false, defaultValue = "") long id, @RequestHeader(name="authorization", required = false, defaultValue = "") String authorization) throws  ServletException {
-
-
+    public ResponseEntity<Perfil> darLike(@RequestParam(name="id", required = false, defaultValue = "") long id, @RequestHeader(name="authorization", required = false, defaultValue = "") String authorization) throws  ServletException {
             TokenFilter tk = new TokenFilter();
             String uEmail = tk.getAuth(authorization);
             Usuario user = userService.findByLogin(uEmail);
             Perfil p = perfilService.findById(id);
-            List<Usuario> likes = p.getLike();
-            if(likes.contains(user)) {
-                likes.remove(user);
+            if(p.getLikeUser(user)) {
+                p.retiraLike();
+                p.setFlagLike(false);
             }
             else {
-                likes.add(user);
+                p.addLike();
+                p.setFlagLike(true);
             }
-
+            perfilService.save(p);
         try {
-            return ResponseEntity<T>(p.getLikeUser(user), HttpStatus.CREATED);
+            return new ResponseEntity<Perfil>(p, HttpStatus.OK);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
@@ -155,7 +154,7 @@ public class DisciplinaController {
 
 
     }
-    */
+
 }
 
 

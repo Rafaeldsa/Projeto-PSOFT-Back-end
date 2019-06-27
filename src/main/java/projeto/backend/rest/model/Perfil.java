@@ -20,15 +20,18 @@ public class Perfil {
     @OneToMany
     private List<Usuario> like;
     private Integer qtdLikes;
-
+    private boolean flagLike;
     public Perfil(){
 
     }
+
+
 
     public Perfil(String disciplina, List<Comentario> comentarios, List<Usuario> like) {
         this.disciplina = disciplina;
         this.comentarios = comentarios;
         this.like = like;
+        this.flagLike = false;
         this.qtdLikes = 0;
     }
 
@@ -59,10 +62,6 @@ public class Perfil {
         return comentarios;
     }
 
-    public List<Usuario> getLike() {
-        return like;
-    }
-
     public Integer getQtdLikes() {
         return qtdLikes;
     }
@@ -70,11 +69,21 @@ public class Perfil {
     public boolean getLikeUser(Usuario u){
         boolean result;
         if(this.like.contains(u)) {
+            this.like.remove(u);
             result =  true;
         }
         else {
+            this.like.add(u);
             result = false;
         }
         return result;
+    }
+
+    public void setFlagLike(boolean flagLike) {
+        this.flagLike = flagLike;
+    }
+
+    public boolean isFlagLike() {
+        return flagLike;
     }
 }
