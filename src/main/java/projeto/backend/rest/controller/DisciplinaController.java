@@ -24,7 +24,7 @@ public class DisciplinaController {
     private PerfilService perfilService;
     private ComentarioService comentarioService;
 
-    DisciplinaController(DisciplinaService disciplinaService, PerfilService perfilService, UserService userService, ComentarioService comentarioService)  {
+    DisciplinaController(DisciplinaService disciplinaService, PerfilService perfilService, UserService userService, ComentarioService comentarioService) {
         this.perfilService = perfilService;
         this.disciplinaService = disciplinaService;
         this.userService = userService;
@@ -43,7 +43,7 @@ public class DisciplinaController {
     }
 
     @GetMapping(value = "/findSubjects")
-    public ResponseEntity<List<Disciplina>> findDisciplina(@RequestParam(name="substring", required=false, defaultValue="") String substring){
+    public ResponseEntity<List<Disciplina>> findDisciplina(@RequestParam(name = "substring", required = false, defaultValue = "") String substring) {
 
         if (substring == null || substring.trim().equals("")) {
             throw new InternalError("Something went wrong");
@@ -63,7 +63,7 @@ public class DisciplinaController {
     public ResponseEntity<List<Disciplina>> create(@RequestBody List<Disciplina> listDisciplina) {
         List<Disciplina> result = disciplinaService.createAll(listDisciplina);
 
-        if(listDisciplina.isEmpty()) {
+        if (listDisciplina.isEmpty()) {
             throw new InternalError("Something went wrong");
         }
 
@@ -78,7 +78,7 @@ public class DisciplinaController {
     public ResponseEntity<List<Perfil>> createPerfil() {
         List<Perfil> perfis = perfilService.createAll();
 
-      try {
+        try {
             return ResponseEntity.status(HttpStatus.OK).body(perfis);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
@@ -94,9 +94,9 @@ public class DisciplinaController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
     }
-    
-    @GetMapping(value="/getPerfil")
-    public ResponseEntity<Perfil> findById(@RequestParam(name="id", required = false, defaultValue = "") long id) {
+
+    @GetMapping(value = "/getPerfil")
+    public ResponseEntity<Perfil> findById(@RequestParam(name = "id", required = false, defaultValue = "") long id) {
         Perfil perfil = perfilService.findById(id);
 
         if (perfil == null) {
@@ -106,8 +106,8 @@ public class DisciplinaController {
         return new ResponseEntity<Perfil>(perfil, HttpStatus.OK);
     }
 
-    @RequestMapping(value="/addComentario")
-    public ResponseEntity<String> comentar(@RequestParam(name="id", required = false, defaultValue = "") int id, @RequestBody Comentario comentario , @RequestHeader(name="authorization", required = false, defaultValue = "") String authorization) throws  ServletException {
+    @RequestMapping(value = "/addComentario")
+    public ResponseEntity<String> comentar(@RequestBody Perfil perfil, @RequestBody Comentario comentario, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
         ZonedDateTime date = ZonedDateTime.now(ZoneId.of("America/Sao_Paulo"));
         String data = DateTimeFormatter.ofPattern("dd/MM/yyyy").format(date);
         String hora = DateTimeFormatter.ofPattern("hh:mm").format(date);
@@ -119,7 +119,7 @@ public class DisciplinaController {
         c.setDate(data);
         c.setHora(hora);
         comentarioService.save(c);
-        Perfil p = perfilService.findById(id);
+        Perfil p = perfilService.findById(perfil.getId());
         p.setComentarios(c);
         perfilService.save(p);
         try {
@@ -131,33 +131,45 @@ public class DisciplinaController {
     }
 
     @PostMapping(value = "/like")
-    public ResponseEntity<Perfil> darLike(@RequestParam(name="id", required = false, defaultValue = "") long id, @RequestHeader(name="authorization", required = false, defaultValue = "") String authorization) throws  ServletException {
-            TokenFilter tk = new TokenFilter();
-            String uEmail = tk.getAuth(authorization);
-            Usuario user = userService.findByLogin(uEmail);
-            Perfil p = perfilService.findById(id);
-            if(p.getLikeUser(user)) {
-                p.retiraLike();
-                p.setFlagLike(false);
-            }
-            else {
-                p.addLike();
-                p.setFlagLike(true);
-            }
-            perfilService.save(p);
+    public ResponseEntity<Perfil> darLike(@RequestParam(name = "id", required = false, defaultValue = "") long id, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
+        TokenFilter tk = new TokenFilter();
+        String uEmail = tk.getAuth(authorization);
+        Usuario user = userService.findByLogin(uEmail);
+        Perfil p = perfilService.findById(id);
+        if (p.getLikeUser(user)) {
+            p.retiraLike();
+            p.setFlagLike(false);
+        } else {
+            p.addLike();
+            p.setFlagLike(true);
+        }
+        perfilService.save(p);
         try {
             return new ResponseEntity<Perfil>(p, HttpStatus.OK);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
 
-
-
     }
 
+    public ResponseEntity<Perfil> resposta(@RequestParam(name = "id", required = false, defaultValue = "") long id, @RequestBody Comentario comentario, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
+        TokenFilter tk = new TokenFilter();
+        String uEmail = tk.getAuth(authorization);
+        Usuario u = userService.findByLogin(uEmail);
+        Perfil p = perfilService.findById(id);
+        Comentario c = comentario;
+
+
+        comentarioService.save(c);
+
+
+        try {
+            return new ResponseEntity<Perfil>(p, HttpStatus.OK);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
+    }
 }
-
-
 
 
 
