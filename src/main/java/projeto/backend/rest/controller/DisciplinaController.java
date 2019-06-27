@@ -129,7 +129,7 @@ public class DisciplinaController {
         }
 
     }
-
+/*
     @PostMapping(value = "/like")
     public ResponseEntity<Perfil> darLike(@RequestParam(name="id", required = false, defaultValue = "") long id, @RequestHeader(name="authorization", required = false, defaultValue = "") String authorization) throws  ServletException {
             TokenFilter tk = new TokenFilter();
@@ -154,7 +154,7 @@ public class DisciplinaController {
 
 
     }
-
+*/
 }
 
 

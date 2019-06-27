@@ -19,8 +19,10 @@ public class Perfil {
     private List<Comentario> comentarios;
     @OneToMany
     private List<Usuario> like;
+
+
     private Integer qtdLikes;
-    private boolean flagLike;
+
     public Perfil(){
 
     }
@@ -31,7 +33,6 @@ public class Perfil {
         this.disciplina = disciplina;
         this.comentarios = comentarios;
         this.like = like;
-        this.flagLike = false;
         this.qtdLikes = 0;
     }
 
@@ -79,11 +80,5 @@ public class Perfil {
         return result;
     }
 
-    public void setFlagLike(boolean flagLike) {
-        this.flagLike = flagLike;
-    }
-
-    public boolean isFlagLike() {
-        return flagLike;
-    }
+    
 }
