@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4144b86-7917-4550-8d18-ab2b26bbc9ff" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/DisciplinaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/DisciplinaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Usuario.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -31,10 +31,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/DisciplinaController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
+            <state relative-caret-position="570">
               <caret line="131" column="2" selection-start-line="131" selection-start-column="2" selection-end-line="131" selection-end-column="2" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -57,6 +57,30 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="465">
               <caret line="38" column="6" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Comentario.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="257">
+              <caret line="36" column="15" selection-start-line="36" selection-start-column="15" selection-end-line="36" selection-end-column="15" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Usuario.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -94,7 +118,6 @@
         <option value="$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Nota.java" />
         <option value="$PROJECT_DIR$/src/main/java/projeto/backend/rest/services/NotaService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Usuario.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/projeto/backend/rest/services/PerfilService.java" />
         <option value="$PROJECT_DIR$/src/main/java/projeto/backend/rest/services/ComentarioService.java" />
@@ -103,6 +126,7 @@
         <option value="$PROJECT_DIR$/src/main/java/projeto/backend/BackendApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Perfil.java" />
         <option value="$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/DisciplinaController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Usuario.java" />
       </list>
     </option>
   </component>
@@ -200,16 +224,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="rest" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Projeto-PSOFT-Back-end" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="rest" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -291,18 +305,18 @@
       <workItem from="1561297428460" duration="6067000" />
       <workItem from="1561510385926" duration="624000" />
       <workItem from="1561563002111" duration="8120000" />
-      <workItem from="1561603502283" duration="1750000" />
+      <workItem from="1561603502283" duration="2192000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76021000" />
+    <option name="totallyTimeSpent" value="76463000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24581006" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24581006" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -311,7 +325,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35993487" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.35993487" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -431,16 +445,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Usuario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Nota.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/dao/DisciplinaDAO.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -553,16 +557,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Comentario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="36" column="15" selection-start-line="36" selection-start-column="15" selection-end-line="36" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/UsuarioController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
@@ -584,8 +578,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/DisciplinaController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
+        <state relative-caret-position="570">
           <caret line="131" column="2" selection-start-line="131" selection-start-column="2" selection-end-line="131" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Comentario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="36" column="15" selection-start-line="36" selection-start-column="15" selection-end-line="36" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Usuario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
