@@ -20,6 +20,10 @@ public class Perfil {
     @OneToMany
     private List<Usuario> like;
 
+    @Column(nullable = false)
+    public boolean flagLike = false;
+
+
 
     private Integer qtdLikes;
 
@@ -33,6 +37,7 @@ public class Perfil {
         this.disciplina = disciplina;
         this.comentarios = comentarios;
         this.like = like;
+        this.flagLike = false;
         this.qtdLikes = 0;
     }
 
@@ -80,5 +85,19 @@ public class Perfil {
         return result;
     }
 
-    
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public boolean isFlagLike() {
+        return flagLike;
+    }
+
+    public void setFlagLike(boolean flagLike) {
+        this.flagLike = flagLike;
+    }
 }
