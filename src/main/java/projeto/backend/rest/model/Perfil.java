@@ -1,14 +1,12 @@
 package projeto.backend.rest.model;
 
 
-import lombok.Data;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 
-@Data
+
 @Entity
 public class Perfil {
 
@@ -34,6 +32,22 @@ public class Perfil {
         this.qtdLikes = 0;
     }
 
+    public void setComentarios(Comentario c) {
+        this.comentarios.add(c);
+    }
+
+    public void setDisciplina(String disciplina) {
+        this.disciplina = disciplina;
+    }
+
+    public void setLike(List<Usuario> like) {
+        this.like = like;
+    }
+
+    public void setQtdLikes(Integer qtdLikes) {
+        this.qtdLikes = qtdLikes;
+    }
+
     public void addLike() {
         this.qtdLikes++;
     }
@@ -41,8 +55,20 @@ public class Perfil {
         this.qtdLikes--;
     }
 
-    public void setComentarios(Comentario c) {
-        this.comentarios.add(c);
+    public String getDisciplina() {
+        return disciplina;
+    }
+
+    public List<Comentario> getComentarios() {
+        return comentarios;
+    }
+
+    public List<Usuario> getLike() {
+        return like;
+    }
+
+    public Integer getQtdLikes() {
+        return qtdLikes;
     }
 
     public boolean getLikeUser(Usuario u){
