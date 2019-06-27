@@ -107,7 +107,7 @@ public class DisciplinaController {
     }
 
     @RequestMapping(value = "/addComentario")
-    public ResponseEntity<String> comentar(@RequestBody Perfil perfil, @RequestBody Comentario comentario, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
+    public ResponseEntity<String> comentar(@RequestParam(name = "id", required = false, defaultValue = "") int id, @RequestBody Comentario comentario, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
         ZonedDateTime date = ZonedDateTime.now(ZoneId.of("America/Sao_Paulo"));
         String data = DateTimeFormatter.ofPattern("dd/MM/yyyy").format(date);
         String hora = DateTimeFormatter.ofPattern("hh:mm").format(date);
@@ -119,7 +119,7 @@ public class DisciplinaController {
         c.setDate(data);
         c.setHora(hora);
         comentarioService.save(c);
-        Perfil p = perfilService.findById(perfil.getId());
+        Perfil p = perfilService.findById(id);
         p.setComentarios(c);
         perfilService.save(p);
         try {
