@@ -105,7 +105,7 @@ public class DisciplinaController {
 
         return new ResponseEntity<Perfil>(perfil, HttpStatus.OK);
     }
-ç
+
     @RequestMapping(value="/addComentario")
     public ResponseEntity<String> comentar(@RequestParam(name="id", required = false, defaultValue = "") int id, @RequestBody Comentario comentario , @RequestHeader(name="authorization", required = false, defaultValue = "") String authorization) throws  ServletException {
         ZonedDateTime date = ZonedDateTime.now(ZoneId.of("America/Sao_Paulo"));
@@ -131,24 +131,23 @@ public class DisciplinaController {
     }
 
     @PostMapping(value = "/like")
-    public ResponseEntity<Perfil> darLike(@RequestBody long id, @RequestBody boolean like, @RequestHeader(name="authorization", required = false, defaultValue = "") String authorization) throws  ServletException {
+    public ResponseEntity<boolean> darLike(@RequestParam(name="id", required = false, defaultValue = "") long id, @RequestHeader(name="authorization", required = false, defaultValue = "") String authorization) throws  ServletException {
 
 
             TokenFilter tk = new TokenFilter();
-            Perfil p = perfilService.findById(id);
             String uEmail = tk.getAuth(authorization);
-            Usuario u = userService.findByLogin(uEmail);
+            Usuario user = userService.findByLogin(uEmail);
+            Perfil p = perfilService.findById(id);
+            List<Usuario> likes = p.getLike();
+            if(likes.contains(user)) {
+                likes.remove(user);
+            }
+            else {
+                likes.add(user);
+            }
 
-            if(like = true) {
-                p.getLike().add(u);
-                p.addLike();
-            }
-            else if(like = false) {
-                p.getLike().remove(u);
-                p.retiraLike();
-            }
         try {
-            return ResponseEntity.status(HttpStatus.OK).body(p);
+            return ResponseEntity<T>(p.getLikeUser(user), HttpStatus.CREATED);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }

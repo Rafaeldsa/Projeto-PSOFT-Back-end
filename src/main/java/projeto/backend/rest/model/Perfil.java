@@ -44,4 +44,15 @@ public class Perfil {
     public void setComentarios(Comentario c) {
         this.comentarios.add(c);
     }
+
+    public boolean getLikeUser(Usuario u){
+        boolean result;
+        if(this.like.contains(u)) {
+            result =  true;
+        }
+        else {
+            result = false;
+        }
+        return result;
+    }
 }
