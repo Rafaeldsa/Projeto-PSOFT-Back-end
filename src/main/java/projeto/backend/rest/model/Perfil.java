@@ -40,10 +40,6 @@ public class Perfil {
         this.disciplina = disciplina;
     }
 
-    public void setLike(List<Usuario> like) {
-        this.like = like;
-    }
-
     public void setQtdLikes(Integer qtdLikes) {
         this.qtdLikes = qtdLikes;
     }
