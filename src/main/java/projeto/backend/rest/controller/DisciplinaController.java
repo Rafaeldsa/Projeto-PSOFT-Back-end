@@ -136,13 +136,8 @@ public class DisciplinaController {
         String uEmail = tk.getAuth(authorization);
         Usuario user = userService.findByLogin(uEmail);
         Perfil p = perfilService.findById(id);
-        if (p.getLikeUser(user)) {
-            p.retiraLike();
-            p.setFlagLike(false);
-        } else {
-            p.addLike();
-            p.setFlagLike(true);
-        }
+        p.getLikeUser(user);
+
         perfilService.save(p);
         try {
             return new ResponseEntity<Perfil>(p, HttpStatus.OK);
