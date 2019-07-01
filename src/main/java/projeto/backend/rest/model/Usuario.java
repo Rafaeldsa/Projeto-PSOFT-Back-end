@@ -18,11 +18,11 @@ public class Usuario {
     private String lastName;
     @Id
     private String email;
-/*
+
     @OneToMany
-   @JsonBackReference(value = "perfil")
-    private List<Usuario> users;
-   */
+    @JsonBackReference(value = "perfil")
+    private List<Usuario> like;
+
 
     @JsonProperty(access =  JsonProperty.Access.WRITE_ONLY)
     private String password;
@@ -31,11 +31,12 @@ public class Usuario {
 
     }
 
-    public Usuario(String firstName, String lastName, String email, String password) {
+    public Usuario(String firstName, String lastName, String email, String password,List<Usuario> users) {
 
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
         this.email = email;
+        this.like = users;
     }
 }

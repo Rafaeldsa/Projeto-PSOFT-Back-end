@@ -132,13 +132,7 @@ public class DisciplinaController {
 
     @PutMapping(value = "/like")
     public ResponseEntity<Perfil> darLike(@RequestParam(name = "id", required = false, defaultValue = "") long id, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
-        TokenFilter tk = new TokenFilter();
-        String uEmail = tk.getAuth(authorization);
-        Usuario user = userService.findByLogin(uEmail);
-        Perfil p = perfilService.findById(id);
-        p.getLikeUser(user);
-
-        perfilService.save(p);
+        Perfil p = perfilService.like(id, authorization);
         try {
             return new ResponseEntity<Perfil>(p, HttpStatus.OK);
         } catch (Exception e) {

@@ -17,16 +17,15 @@ public class Perfil {
     private String disciplina;
     @OneToMany
     private List<Comentario> comentarios;
+
     @OneToMany
-    /*@JoinTable(name = "likes", joinColumns = {@JoinColumn(name = "perfil_id")}, inverseJoinColumns = {@JoinColumn(name = "usuario_email")})*/
+    @JoinTable(name = "likes", joinColumns = {@JoinColumn(name = "perfil_id")}, inverseJoinColumns = {@JoinColumn(name = "usuario_email")})
     private List<Usuario> like;
 
 
     public Perfil(){
 
     }
-
-
 
     public Perfil(String disciplina, List<Comentario> comentarios, List<Usuario> like) {
         this.disciplina = disciplina;
@@ -55,7 +54,7 @@ public class Perfil {
         return this.like.size();
     }
 
-    public boolean getLikeUser(Usuario u){
+    public boolean setLikeUser(Usuario u){
         boolean result;
         if(this.like.contains(u)) {
           result =  this.like.remove(u);
