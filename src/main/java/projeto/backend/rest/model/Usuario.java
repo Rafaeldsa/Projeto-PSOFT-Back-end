@@ -1,11 +1,14 @@
 package projeto.backend.rest.model;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.List;
+
 @Data
 @Entity
 public class Usuario {
@@ -14,6 +17,9 @@ public class Usuario {
     private String lastName;
     @Id
     private String email;
+
+    @JsonBackReference(value = "perfil")
+    private List<Usuario> users;
 
     @JsonProperty(access =  JsonProperty.Access.WRITE_ONLY)
     private String password;
