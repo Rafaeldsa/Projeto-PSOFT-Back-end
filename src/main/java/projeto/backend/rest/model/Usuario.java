@@ -7,6 +7,7 @@ import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.util.List;
 
 @Data
@@ -17,9 +18,11 @@ public class Usuario {
     private String lastName;
     @Id
     private String email;
-
+/*
+    @OneToMany
    @JsonBackReference(value = "perfil")
     private List<Usuario> users;
+   */
 
     @JsonProperty(access =  JsonProperty.Access.WRITE_ONLY)
     private String password;
