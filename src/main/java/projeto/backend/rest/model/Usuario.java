@@ -7,6 +7,7 @@ import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class Usuario {
     @Id
     private String email;
 
-    @OneToMany
+    @ManyToMany
     @JsonBackReference(value = "perfil")
     private List<Usuario> like;
 
