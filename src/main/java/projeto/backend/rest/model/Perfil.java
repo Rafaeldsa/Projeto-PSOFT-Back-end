@@ -17,8 +17,8 @@ public class Perfil {
     private String disciplina;
     @OneToMany
     private List<Comentario> comentarios;
-    /*@OneToMany
-    @JoinTable(name = "likes", joinColumns = {@JoinColumn(name = "perfil_id")}, inverseJoinColumns = {@JoinColumn(name = "usuario_email")})*/
+    @OneToMany
+    /*@JoinTable(name = "likes", joinColumns = {@JoinColumn(name = "perfil_id")}, inverseJoinColumns = {@JoinColumn(name = "usuario_email")})*/
     private List<Usuario> like;
 
 
