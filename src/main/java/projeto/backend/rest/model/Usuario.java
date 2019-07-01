@@ -18,7 +18,7 @@ public class Usuario {
     @Id
     private String email;
 
-    @JsonBackReference(value = "perfil")
+   @JsonBackReference(value = "perfil")
     private List<Usuario> users;
 
     @JsonProperty(access =  JsonProperty.Access.WRITE_ONLY)
