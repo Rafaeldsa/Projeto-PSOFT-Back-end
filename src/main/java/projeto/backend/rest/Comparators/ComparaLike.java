@@ -1,4 +1,6 @@
-package projeto.backend.rest.model;
+package projeto.backend.rest.Comparators;
+
+import projeto.backend.rest.model.Perfil;
 
 import java.io.Serializable;
 import java.util.Comparator;
