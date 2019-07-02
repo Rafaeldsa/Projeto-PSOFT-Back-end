@@ -54,7 +54,7 @@ public class Perfil {
         return this.curtidas.size();
     }
 
-    public boolean setLikeUser(Usuario u){
+    public boolean setCurtidas(Usuario u){
         boolean result;
         if(this.curtidas.contains(u)) {
           result =  this.curtidas.remove(u);

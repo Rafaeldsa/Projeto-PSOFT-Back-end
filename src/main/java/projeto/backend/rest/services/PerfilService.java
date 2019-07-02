@@ -57,29 +57,10 @@ public class PerfilService {
         String uEmail = tk.getAuth(authorization);
         Usuario user = userService.findByLogin(uEmail);
         Perfil p = perfilDAO.findById(id);
-        p.setLikeUser(user);
+        p.setCurtidas(user);
         return perfilDAO.save(p);
     }
-
-    public Perfil comentar(long id, Comentario comentario, String authorization) throws ServletException{
-        ZonedDateTime date = ZonedDateTime.now(ZoneId.of("America/Sao_Paulo"));
-        String data = DateTimeFormatter.ofPattern("dd/MM/yyyy").format(date);
-        String hora = DateTimeFormatter.ofPattern("hh:mm").format(date);
-        TokenFilter tk = new TokenFilter();
-        String uEmail = tk.getAuth(authorization);
-        Usuario u = userService.findByLogin(uEmail);
-        Comentario c = comentario;
-        c.setUsuario(u);
-        c.setDate(data);
-        c.setHora(hora);
-        comentarioService.save(c);
-        Perfil p = perfilDAO.findById(id);
-        p.setComentarios(c);
-        perfilDAO.save(p);
-
-        return p;
-    }
-
+/*
     public Perfil deleteComentario(long idPerfil,long idComentario, String authorization) throws ServletException{
         TokenFilter tk = new TokenFilter();
         String uEmail = tk.getAuth(authorization);
@@ -91,31 +72,7 @@ public class PerfilService {
         return p;
 
     }
+*/
 
-
-    public Perfil respostaComentario(long idPerfil, long idComentario, Comentario comentarioResposta, String authorization) throws ServletException {
-        ZonedDateTime date = ZonedDateTime.now(ZoneId.of("America/Sao_Paulo"));
-        String data = DateTimeFormatter.ofPattern("dd/MM/yyyy").format(date);
-        String hora = DateTimeFormatter.ofPattern("hh:mm").format(date);
-
-        TokenFilter tk = new TokenFilter();
-        String uEmail = tk.getAuth(authorization);
-        Usuario user = userService.findByLogin(uEmail);
-
-        Perfil perfil = perfilDAO.findById(idPerfil);
-
-        Comentario c = perfil.getComentarios().get((int) idComentario);
-
-        comentarioResposta.setUsuario(user);
-        comentarioResposta.setDate(data);
-        comentarioResposta.setHora(hora);
-
-        c.setComentarioDocomentario(comentarioResposta);
-
-        comentarioService.save(c);
-        perfilDAO.save(perfil);
-
-        return perfil;
-    }
 
 }

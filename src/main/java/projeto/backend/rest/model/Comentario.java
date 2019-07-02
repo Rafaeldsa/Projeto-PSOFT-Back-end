@@ -9,7 +9,6 @@ import java.util.List;
 import java.time.ZoneId;
 
 
-@Data
 @Entity
 public class Comentario {
 
@@ -41,6 +40,49 @@ public class Comentario {
 
    public void setComentarioDocomentario(Comentario c) {
       this.comentarioDocomentario.add(c);
+   }
+   public List<Comentario> getComentarioDocomentario() {
+      return comentarioDocomentario;
+   }
+
+   public long getId() {
+      return id;
+   }
+
+   public void setId(long id) {
+      this.id = id;
+   }
+
+   public Usuario getUsuario() {
+      return usuario;
+   }
+
+   public void setUsuario(Usuario usuario) {
+      this.usuario = usuario;
+   }
+
+   public String getComentario() {
+      return comentario;
+   }
+
+   public void setComentario(String comentario) {
+      this.comentario = comentario;
+   }
+
+   public String getDate() {
+      return date;
+   }
+
+   public void setDate(String date) {
+      this.date = date;
+   }
+
+   public String getHora() {
+      return hora;
+   }
+
+   public void setHora(String hora) {
+      this.hora = hora;
    }
 
 

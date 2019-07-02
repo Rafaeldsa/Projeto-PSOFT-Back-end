@@ -108,7 +108,20 @@ public class DisciplinaController {
 
     @RequestMapping(value = "/addComentario")
     public ResponseEntity<String> comentar(@RequestParam(name = "id", required = false, defaultValue = "") int id, @RequestBody Comentario comentario, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
-        Perfil p = perfilService.comentar(id, comentario, authorization);
+        ZonedDateTime date = ZonedDateTime.now(ZoneId.of("America/Sao_Paulo"));
+        String data = DateTimeFormatter.ofPattern("dd/MM/yyyy").format(date);
+        String hora = DateTimeFormatter.ofPattern("hh:mm").format(date);
+        TokenFilter tk = new TokenFilter();
+        String uEmail = tk.getAuth(authorization);
+        Usuario u = userService.findByLogin(uEmail);
+        Comentario c = comentario;
+        c.setUsuario(u);
+        c.setDate(data);
+        c.setHora(hora);
+        comentarioService.save(c);
+        Perfil p = perfilService.findById(id);
+        p.setComentarios(c);
+        perfilService.save(p);
         try {
             return new ResponseEntity<String>("Comentário criado com sucesso", HttpStatus.CREATED);
         } catch (Exception e) {
@@ -116,7 +129,7 @@ public class DisciplinaController {
         }
 
     }
-
+/*
     @DeleteMapping(value = "deleteComentario")
     public ResponseEntity<Perfil> deleteComentario(@RequestParam(name = "id", required = false, defaultValue = "") long idPerfil, @RequestParam(name = "id", required = false, defaultValue = "") long idComentario, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
         Perfil p = perfilService.deleteComentario(idPerfil, idComentario, authorization);
@@ -127,7 +140,7 @@ public class DisciplinaController {
         }
 
     }
-
+*/
     @PutMapping(value = "/like")
     public ResponseEntity<Perfil> darLike(@RequestParam(name = "id", required = false, defaultValue = "") long id, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
         Perfil p = perfilService.like(id, authorization);
@@ -138,16 +151,35 @@ public class DisciplinaController {
         }
 
     }
-
+/*
     @PostMapping(value = "/addResposta")
-    public ResponseEntity<Perfil> resposta(@RequestParam(name = "id", required = false, defaultValue = "") long idPerfil, @RequestParam(name = "id", required = false, defaultValue = "") long idComenatrio,@RequestBody Comentario comentarioResposta, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
-            Perfil perfil = perfilService.respostaComentario(idPerfil, idComenatrio, comentarioResposta, authorization);
+    public ResponseEntity<Perfil> resposta(@RequestParam(name = "id", required = false, defaultValue = "") long idPerfil, @RequestParam(name = "id", required = false, defaultValue = "") long idComentario,@RequestBody Comentario comentarioResposta, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
+        ZonedDateTime date = ZonedDateTime.now(ZoneId.of("America/Sao_Paulo"));
+        String data = DateTimeFormatter.ofPattern("dd/MM/yyyy").format(date);
+        String hora = DateTimeFormatter.ofPattern("hh:mm").format(date);
+
+        TokenFilter tk = new TokenFilter();
+        String uEmail = tk.getAuth(authorization);
+        Usuario user = userService.findByLogin(uEmail);
+
+        Perfil perfil = perfilService.findById(idPerfil);
+
+        Comentario c = perfil.getComentarios().get((int) idComentario);
+
+        comentarioResposta.setUsuario(user);
+        comentarioResposta.setDate(data);
+        comentarioResposta.setHora(hora);
+
+        c.setComentarioDocomentario(comentarioResposta);
+
+        comentarioService.save(c);
+        perfilService.save(perfil);
         try {
             return new ResponseEntity<Perfil>(perfil, HttpStatus.OK);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
-    }
+    }*/
 }
 
 
