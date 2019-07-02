@@ -152,7 +152,7 @@ public class DisciplinaController {
         }
 
     }
-/*
+
     @PostMapping(value = "/addResposta")
     public ResponseEntity<Perfil> resposta(@RequestParam(name = "id", required = false, defaultValue = "") long idPerfil, @RequestParam(name = "id", required = false, defaultValue = "") long idComentario,@RequestBody Comentario comentarioResposta, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
         ZonedDateTime date = ZonedDateTime.now(ZoneId.of("America/Sao_Paulo"));
@@ -180,7 +180,7 @@ public class DisciplinaController {
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
-    }*/
+    }
 }
 
 
