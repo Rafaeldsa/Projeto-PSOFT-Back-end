@@ -39,4 +39,9 @@ public class Comentario {
       this.usuario = usuario;
    }
 
+   public void setComentarioDocomentario(Comentario c) {
+      this.comentarioDocomentario.add(c);
+   }
+
+
 }

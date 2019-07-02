@@ -79,7 +79,7 @@ public class PerfilService {
         return p;
     }
 
-    public Perfil deleteComentario(int idPerfil, int idComentario, String authorization) throws ServletException{
+    public Perfil deleteComentario(long idPerfil,long idComentario, String authorization) throws ServletException{
         TokenFilter tk = new TokenFilter();
         String uEmail = tk.getAuth(authorization);
         Usuario u = userService.findByLogin(uEmail);
@@ -90,4 +90,18 @@ public class PerfilService {
         return p;
 
     }
+
+    public Perfil respostaComentario(long idPerfil, long idComentario, Comentario comentarioResposta, String authorization) throws ServletException {
+        TokenFilter tk = new TokenFilter();
+        String uEmail = tk.getAuth(authorization);
+        Usuario user = userService.findByLogin(uEmail);
+        Perfil perfil = perfilDAO.findById(idPerfil);
+        Comentario c = perfil.getComentarios().get((int) idComentario);
+        c.setComentarioDocomentario(comentarioResposta);
+        comentarioService.save(c);
+        perfilDAO.save(perfil);
+
+        return perfil;
+    }
+
 }
