@@ -107,6 +107,8 @@ public class DisciplinaController {
             throw new RuntimeException("Perfil not found");
         }
 
+        
+
         return new ResponseEntity<Perfil>(perfil, HttpStatus.OK);
     }
 
