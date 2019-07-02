@@ -62,7 +62,7 @@ public class PerfilService {
         p.setUserAtual(user);
         return perfilDAO.save(p);
     }
-/*
+
     public Perfil deleteComentario(long idPerfil,long idComentario, String authorization) throws ServletException{
         TokenFilter tk = new TokenFilter();
         String uEmail = tk.getAuth(authorization);
@@ -74,7 +74,7 @@ public class PerfilService {
         return p;
 
     }
-*/
+
 
 
 }
