@@ -24,7 +24,7 @@ public class BackendApplication {
 		bean.setOrder(0);
 		return bean;
 	}
-
+/*
 	@Bean
 	public FilterRegistrationBean filterJwt() {
 		FilterRegistrationBean filterRb = new FilterRegistrationBean();
@@ -36,7 +36,7 @@ public class BackendApplication {
 
 
 		return filterRb;
-	}
+	}*/
 
 	public static void main(String[] args) {
 
