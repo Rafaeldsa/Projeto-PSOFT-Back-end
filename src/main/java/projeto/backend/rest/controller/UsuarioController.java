@@ -23,18 +23,18 @@ public class UsuarioController {
 
     @ApiOperation(
             value="Cadastrar um novo usuario",
-            response=ResponseEntity.class,
+            response=Usuario.class,
             notes="Essa operação salva um novo registro com as informações do usuario.")
     @ApiResponses(value= {
             @ApiResponse(
                     code=200,
-                    message="Retorna um ResponseModel com uma mensagem de sucesso",
-                    response=ResponseEntity.class
+                    message="Retorna um Usuario.",
+                    response=Usuario.class
             ),
             @ApiResponse(
                     code=500,
-                    message="Caso tenhamos algum erro vamos retornar um ResponseModel com a Exception",
-                    response=ResponseEntity.class
+                    message="Caso tenhamos algum erro, retornará uma Exception."
+
             )
 
     })
@@ -49,7 +49,23 @@ public class UsuarioController {
             }
                 return new ResponseEntity<Usuario>(newUser, HttpStatus.CREATED);
         }
+    @ApiOperation(
+            value="Listar todos os usuários",
+            response=Usuario.class,
+            notes="Essa método lista todos os usuários cadastrados.")
+    @ApiResponses(value= {
+            @ApiResponse(
+                    code=200,
+                    message="Retorna um usuário.",
+                    response=Usuario.class
+            ),
+            @ApiResponse(
+                    code=500,
+                    message="Caso tenhamos algum erro, retornará uma Exception"
 
+            )
+
+    })
     @RequestMapping(value = "/all", method = RequestMethod.GET)
     public ResponseEntity<List<Usuario>> findAll() {
 

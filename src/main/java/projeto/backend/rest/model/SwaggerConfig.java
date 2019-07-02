@@ -22,7 +22,7 @@ public class SwaggerConfig {
 
         docket
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("br.com.ciceroednilson"))
+                .apis(RequestHandlerSelectors.basePackage("projeto.backend.rest.controller"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(this.informacoesApi().build());
@@ -34,12 +34,12 @@ public class SwaggerConfig {
 
         ApiInfoBuilder apiInfoBuilder = new ApiInfoBuilder();
 
-        apiInfoBuilder.title("Api-Ucdb");
-        apiInfoBuilder.description("Api para PSOFT.");
+        apiInfoBuilder.title("API-Ucdb");
+        apiInfoBuilder.description("API para os Usuários discutir sobre as disciplinas do curso de Ciência da Computação da UFCG.");
         apiInfoBuilder.version("1.0");
         apiInfoBuilder.termsOfServiceUrl("Termo de uso: Deve ser usada para diversão!.");
         apiInfoBuilder.license("Licença - Open Source");
-        apiInfoBuilder.licenseUrl("http://ucdb.zapto.org/index.html");
+        apiInfoBuilder.licenseUrl("");
         apiInfoBuilder.contact(this.contato());
 
         return apiInfoBuilder;

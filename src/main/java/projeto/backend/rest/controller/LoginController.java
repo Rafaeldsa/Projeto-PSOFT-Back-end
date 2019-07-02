@@ -2,6 +2,9 @@ package projeto.backend.rest.controller;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import projeto.backend.rest.model.Usuario;
@@ -20,6 +23,23 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
+    @ApiOperation(
+            value="Realizar login em um usuário",
+            response=Usuario.class,
+            notes="Essa método realiza a autenticação de um usuário previamente cadastrado.")
+    @ApiResponses(value= {
+            @ApiResponse(
+                    code=200,
+                    message="Retorna uma response contendo a autenticação do usuário, um token.",
+                    response=Usuario.class
+            ),
+            @ApiResponse(
+                    code=500,
+                    message="Caso tenhamos algum erro, retornará uma Exception"
+
+            )
+
+    })
     @PostMapping("/login")
     public LoginResponse authenticate(@RequestBody Usuario user) throws ServletException {
 
@@ -45,6 +65,7 @@ public class LoginController {
 
 
     }
+
 
     private class LoginResponse {
         public String token;
