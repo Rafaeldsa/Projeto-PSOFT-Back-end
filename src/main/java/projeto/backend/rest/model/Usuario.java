@@ -20,7 +20,7 @@ public class Usuario {
     @Id
     private String email;
 
-    @ManyToMany
+    @OneToMany
     @JsonBackReference(value = "perfil")
     private List<Usuario> like;
 
