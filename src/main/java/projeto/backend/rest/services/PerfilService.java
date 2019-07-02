@@ -92,7 +92,7 @@ public class PerfilService {
 
     }
 
-    @PostMapping(value = "addResposta")
+
     public Perfil respostaComentario(long idPerfil, long idComentario, Comentario comentarioResposta, String authorization) throws ServletException {
         ZonedDateTime date = ZonedDateTime.now(ZoneId.of("America/Sao_Paulo"));
         String data = DateTimeFormatter.ofPattern("dd/MM/yyyy").format(date);
