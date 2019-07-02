@@ -20,7 +20,7 @@ public class Perfil {
 
     @ManyToMany
     @JoinTable(name = "likes", joinColumns = {@JoinColumn(name = "perfil_id")}, inverseJoinColumns = {@JoinColumn(name = "usuario_email")})
-    private List<Usuario> like;
+    private List<Usuario> curtidas;
 
 
     public Perfil(){
@@ -30,7 +30,7 @@ public class Perfil {
     public Perfil(String disciplina, List<Comentario> comentarios, List<Usuario> like) {
         this.disciplina = disciplina;
         this.comentarios = comentarios;
-        this.like = like;
+        this.curtidas = like;
     }
 
     public void setComentarios(Comentario c) {
@@ -51,17 +51,17 @@ public class Perfil {
     }
 
     public Integer getQtdLikes() {
-        return this.like.size();
+        return this.curtidas.size();
     }
 
     public boolean setLikeUser(Usuario u){
         boolean result;
-        if(this.like.contains(u)) {
-          result =  this.like.remove(u);
+        if(this.curtidas.contains(u)) {
+          result =  this.curtidas.remove(u);
 
         }
         else {
-            result = this.like.add(u);
+            result = this.curtidas.add(u);
 
         }
         return result;

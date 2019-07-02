@@ -127,14 +127,15 @@ public class DisciplinaController {
         }
 
     }
-
+/*
+    @PostMapping(value = "/addResposta")
     public ResponseEntity<Perfil> resposta(@RequestParam(name = "id", required = false, defaultValue = "") long id, @RequestBody Comentario comentario, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
         TokenFilter tk = new TokenFilter();
         String uEmail = tk.getAuth(authorization);
         Usuario u = userService.findByLogin(uEmail);
         Perfil p = perfilService.findById(id);
         Comentario c = comentario;
-
+        c.getComentarioDocomentario().add()
 
         comentarioService.save(c);
 
@@ -144,7 +145,7 @@ public class DisciplinaController {
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
-    }
+    }*/
 }
 
 

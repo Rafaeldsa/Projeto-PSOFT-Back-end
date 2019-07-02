@@ -22,7 +22,7 @@ public class Usuario {
 
     @OneToMany
     @JsonBackReference(value = "perfil")
-    private List<Usuario> like;
+    private List<Usuario> curtidas;
 
 
     @JsonProperty(access =  JsonProperty.Access.WRITE_ONLY)
@@ -38,6 +38,6 @@ public class Usuario {
         this.lastName = lastName;
         this.password = password;
         this.email = email;
-        this.like = users;
+        this.curtidas = users;
     }
 }
