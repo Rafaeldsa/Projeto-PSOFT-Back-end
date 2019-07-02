@@ -92,12 +92,24 @@ public class PerfilService {
     }
 
     public Perfil respostaComentario(long idPerfil, long idComentario, Comentario comentarioResposta, String authorization) throws ServletException {
+        ZonedDateTime date = ZonedDateTime.now(ZoneId.of("America/Sao_Paulo"));
+        String data = DateTimeFormatter.ofPattern("dd/MM/yyyy").format(date);
+        String hora = DateTimeFormatter.ofPattern("hh:mm").format(date);
+
         TokenFilter tk = new TokenFilter();
         String uEmail = tk.getAuth(authorization);
         Usuario user = userService.findByLogin(uEmail);
+
         Perfil perfil = perfilDAO.findById(idPerfil);
+
         Comentario c = perfil.getComentarios().get((int) idComentario);
+
+        comentarioResposta.setUsuario(user);
+        comentarioResposta.setDate(data);
+        comentarioResposta.setHora(hora);
+
         c.setComentarioDocomentario(comentarioResposta);
+
         comentarioService.save(c);
         perfilDAO.save(perfil);
 
