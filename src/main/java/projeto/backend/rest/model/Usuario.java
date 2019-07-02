@@ -21,7 +21,7 @@ public class Usuario {
     private String email;
 
     @OneToMany
-    
+    @JsonBackReference(value = "perfil")
     private List<Usuario> like;
 
 

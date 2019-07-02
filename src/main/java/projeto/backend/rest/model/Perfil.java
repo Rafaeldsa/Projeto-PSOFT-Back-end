@@ -19,7 +19,7 @@ public class Perfil {
     private List<Comentario> comentarios;
 
     @ManyToMany
-
+    @JoinTable(name = "likes", joinColumns = {@JoinColumn(name = "perfil_id")}, inverseJoinColumns = {@JoinColumn(name = "usuario_email")})
     private List<Usuario> like;
 
 
