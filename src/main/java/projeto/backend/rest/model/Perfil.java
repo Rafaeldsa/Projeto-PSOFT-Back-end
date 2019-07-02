@@ -22,7 +22,9 @@ public class Perfil {
     @JoinTable(name = "likes", joinColumns = {@JoinColumn(name = "perfil_id")}, inverseJoinColumns = {@JoinColumn(name = "usuario_email")})
     private List<Usuario> curtidas;
 
-    private boolean flag;
+    @Transient
+    private Usuario userAtual;
+
     public Perfil(){
 
     }
@@ -31,7 +33,6 @@ public class Perfil {
         this.disciplina = disciplina;
         this.comentarios = comentarios;
         this.curtidas = like;
-        this.flag = false;
     }
 
     public void setComentarios(Comentario c) {
@@ -55,22 +56,21 @@ public class Perfil {
         return this.curtidas.size();
     }
 
-    public boolean setCurtidas(Usuario u){
-        boolean result;
+    public void setCurtidas(Usuario u){
         if(this.curtidas.contains(u)) {
-          result = false;
           this.curtidas.remove(u);
-
-
         }
         else {
-            result = true;
             this.curtidas.add(u);
-
         }
-        return result;
+    }
+    public Usuario getUserAtual() {
+        return this.userAtual;
     }
 
+    public void setUserAtual(Usuario usuario) {
+        this.userAtual = usuario;
+    }
     public void setId(long id) {
         this.id = id;
     }
@@ -81,12 +81,5 @@ public class Perfil {
 
     public boolean getUserLIke(Usuario user) {
         return this.curtidas.contains(user);
-    }
-    public boolean getFLag() {
-        return this.flag;
-    }
-    public void setFLag (Usuario user){
-        this.flag = this.getUserLIke(user);
-
     }
 }

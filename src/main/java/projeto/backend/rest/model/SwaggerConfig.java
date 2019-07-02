@@ -37,7 +37,7 @@ public class SwaggerConfig {
         apiInfoBuilder.title("Api-Ucdb");
         apiInfoBuilder.description("Api para PSOFT.");
         apiInfoBuilder.version("1.0");
-        apiInfoBuilder.termsOfServiceUrl("Termo de uso: Deve ser usada para estudos.");
+        apiInfoBuilder.termsOfServiceUrl("Termo de uso: Deve ser usada para diversão!.");
         apiInfoBuilder.license("Licença - Open Source");
         apiInfoBuilder.licenseUrl("http://ucdb.zapto.org/index.html");
         apiInfoBuilder.contact(this.contato());
@@ -49,7 +49,7 @@ public class SwaggerConfig {
 
         return new Contact(
                 "Rafael Dantas",
-                "http://ucdb.zapto.org/index.htm",
+                "http://ucdb.zapto.org/index.html",
                 "rafael.azevedo@ccc.ufcg.edu.br");
     }
 }

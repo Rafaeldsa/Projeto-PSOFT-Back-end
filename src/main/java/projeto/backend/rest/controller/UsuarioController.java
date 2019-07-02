@@ -1,5 +1,8 @@
 package projeto.backend.rest.controller;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,13 +17,27 @@ import java.util.List;
 public class UsuarioController {
         private UserService userService;
 
-
-
         UsuarioController(UserService userService) {
             this.userService = userService;
         }
 
+    @ApiOperation(
+            value="Cadastrar um novo usuario",
+            response=ResponseEntity.class,
+            notes="Essa operação salva um novo registro com as informações do usuario.")
+    @ApiResponses(value= {
+            @ApiResponse(
+                    code=200,
+                    message="Retorna um ResponseModel com uma mensagem de sucesso",
+                    response=ResponseEntity.class
+            ),
+            @ApiResponse(
+                    code=500,
+                    message="Caso tenhamos algum erro vamos retornar um ResponseModel com a Exception",
+                    response=ResponseEntity.class
+            )
 
+    })
         @PostMapping(value = "/")
         @ResponseBody
         public ResponseEntity<Usuario> create(@RequestBody Usuario user) {
