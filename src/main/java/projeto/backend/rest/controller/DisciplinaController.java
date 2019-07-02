@@ -121,7 +121,7 @@ public class DisciplinaController {
         comentarioService.save(c);
         Perfil p = perfilService.findById(id);
         p.setComentarios(c);
-        p.getUserLIke(u);
+
         perfilService.save(p);
         try {
             return new ResponseEntity<String>("Comentário criado com sucesso", HttpStatus.CREATED);
@@ -181,6 +181,8 @@ public class DisciplinaController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
     }
+
+
 }
 
 
