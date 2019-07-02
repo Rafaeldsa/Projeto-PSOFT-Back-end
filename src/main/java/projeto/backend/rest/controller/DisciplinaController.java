@@ -108,20 +108,7 @@ public class DisciplinaController {
 
     @RequestMapping(value = "/addComentario")
     public ResponseEntity<String> comentar(@RequestParam(name = "id", required = false, defaultValue = "") int id, @RequestBody Comentario comentario, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
-        ZonedDateTime date = ZonedDateTime.now(ZoneId.of("America/Sao_Paulo"));
-        String data = DateTimeFormatter.ofPattern("dd/MM/yyyy").format(date);
-        String hora = DateTimeFormatter.ofPattern("hh:mm").format(date);
-        TokenFilter tk = new TokenFilter();
-        String uEmail = tk.getAuth(authorization);
-        Usuario u = userService.findByLogin(uEmail);
-        Comentario c = comentario;
-        c.setUsuario(u);
-        c.setDate(data);
-        c.setHora(hora);
-        comentarioService.save(c);
-        Perfil p = perfilService.findById(id);
-        p.setComentarios(c);
-        perfilService.save(p);
+       Perfil p =  perfilService.comentar(id, comentario, authorization);
         try {
             return new ResponseEntity<String>("Comentário criado com sucesso", HttpStatus.CREATED);
         } catch (Exception e) {
