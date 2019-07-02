@@ -108,9 +108,20 @@ public class DisciplinaController {
 
     @RequestMapping(value = "/addComentario")
     public ResponseEntity<String> comentar(@RequestParam(name = "id", required = false, defaultValue = "") int id, @RequestBody Comentario comentario, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
-       Perfil p =  perfilService.comentar(id, comentario, authorization);
+        Perfil p = perfilService.comentar(id, comentario, authorization);
         try {
             return new ResponseEntity<String>("Comentário criado com sucesso", HttpStatus.CREATED);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
+
+    }
+
+    @DeleteMapping(value = "deleteComentario")
+    public ResponseEntity<String> deleteComentario(@RequestParam(name = "id", required = false, defaultValue = "") int idPerfil, @RequestParam(name = "id", required = false, defaultValue = "") int idComentario, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
+        Perfil p = perfilService.deleteComentario(idPerfil, idComentario, authorization);
+        try {
+            return new ResponseEntity<String>("Comentário deletado com sucesso", HttpStatus.CREATED);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
@@ -127,18 +138,15 @@ public class DisciplinaController {
         }
 
     }
-/*
-    @PostMapping(value = "/addResposta")
-    public ResponseEntity<Perfil> resposta(@RequestParam(name = "id", required = false, defaultValue = "") long id, @RequestBody Comentario comentario, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
+
+    /*@PostMapping(value = "/addResposta")
+    public ResponseEntity<Perfil> resposta(@RequestParam(name = "id", required = false, defaultValue = "") long idPerfil, @RequestParam(name = "id", required = false, defaultValue = "") long idComenatrio, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
         TokenFilter tk = new TokenFilter();
         String uEmail = tk.getAuth(authorization);
-        Usuario u = userService.findByLogin(uEmail);
-        Perfil p = perfilService.findById(id);
-        Comentario c = comentario;
-        c.getComentarioDocomentario().add()
-
-        comentarioService.save(c);
-
+        Usuario user = userService.findByLogin(uEmail);
+        Perfil perfil = perfilService.findById(idPerfil);
+        Comentario comentario = comentarioService.findById(idComenatrio);
+        comentario.getComentarioDocomentario().add()
 
         try {
             return new ResponseEntity<Perfil>(p, HttpStatus.OK);

@@ -78,4 +78,17 @@ public class PerfilService {
 
         return p;
     }
+
+    public Perfil deleteComentario(int idPerfil, int idComentario, String authorization) throws ServletException{
+        TokenFilter tk = new TokenFilter();
+        String uEmail = tk.getAuth(authorization);
+        Usuario u = userService.findByLogin(uEmail);
+        Perfil p = perfilDAO.findById(idPerfil);
+        Comentario c = p.getComentarios().remove(idComentario);
+        comentarioService.save(c);
+        perfilDAO.save(p);
+
+        return p;
+
+    }
 }
