@@ -48,8 +48,8 @@ public class SwaggerConfig {
     private Contact contato() {
 
         return new Contact(
-                "Cícero Ednilson",
-                "http://www.ciceroednilson.com.br",
-                "ciceroednilson@gmail.com");
+                "Rafael Dantas",
+                "http://ucdb.zapto.org/index.htm",
+                "rafael.azevedo@ccc.ufcg.edu.br");
     }
 }

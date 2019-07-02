@@ -170,7 +170,7 @@ public class DisciplinaController {
 
         Perfil perfil = perfilService.findById(idPerfil);
 
-        Comentario c = perfil.getComentarios().get((int) idComentario);
+        Comentario c = perfil.getComentarios().get(idComentario);
 
         comentarioResposta.setUsuario(user);
         comentarioResposta.setDate(data);
