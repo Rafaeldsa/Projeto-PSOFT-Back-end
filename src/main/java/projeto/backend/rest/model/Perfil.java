@@ -75,5 +75,8 @@ public class Perfil {
         return id;
     }
 
+    public boolean getUserLIke(Usuario user) {
+        return this.curtidas.contains(user);
+    }
 
 }
