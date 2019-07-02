@@ -84,8 +84,7 @@ public class PerfilService {
         String uEmail = tk.getAuth(authorization);
         Usuario u = userService.findByLogin(uEmail);
         Perfil p = perfilDAO.findById(idPerfil);
-        Comentario c = p.getComentarios().remove(idComentario);
-        comentarioService.save(c);
+        p.getComentarios().remove(idComentario);
         perfilDAO.save(p);
 
         return p;
