@@ -23,14 +23,16 @@ public class DisciplinaController {
     private DisciplinaService disciplinaService;
     private PerfilService perfilService;
     private ComentarioService comentarioService;
-    private ComparaLike comparator;
+    private ComparaLike comparadorRanking;
+    private ComparatorComentario comparadorComentario;
 
     DisciplinaController(DisciplinaService disciplinaService, PerfilService perfilService, UserService userService, ComentarioService comentarioService) {
         this.perfilService = perfilService;
         this.disciplinaService = disciplinaService;
         this.userService = userService;
         this.comentarioService = comentarioService;
-        this.comparator = new ComparaLike();
+        this.comparadorRanking = new ComparaLike();
+        this.comparadorComentario = new ComparatorComentario();
     }
 
     @GetMapping(value = "/allSubjects")
@@ -123,6 +125,7 @@ public class DisciplinaController {
         comentarioService.save(c);
         Perfil p = perfilService.findById(id);
         p.setComentarios(c);
+        p.getComentarios().sort(this.comparadorComentario);
 
         perfilService.save(p);
         try {
@@ -187,7 +190,7 @@ public class DisciplinaController {
     @GetMapping(value = "/ranking")
     public ResponseEntity<List> ranking() {
             List<Perfil> result = perfilService.findAll();
-            result.sort(this.comparator);
+            result.sort(this.comparadorRanking);
       try {
             return ResponseEntity.status(HttpStatus.OK).body(result);
         } catch (Exception e) {
