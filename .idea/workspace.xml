@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2eb243ca-7bdd-4df8-93f4-009af595c55f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/DisciplinaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/DisciplinaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Comentario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Comentario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/services/PerfilService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/services/PerfilService.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -29,20 +27,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/DisciplinaController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
+            <state relative-caret-position="450">
               <caret line="143" column="118" selection-start-line="143" selection-start-column="118" selection-end-line="143" selection-end-column="118" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/services/PerfilService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="93" column="147" selection-start-line="93" selection-start-column="147" selection-end-line="93" selection-end-column="147" />
+            <state relative-caret-position="217">
+              <caret line="94" column="37" selection-start-line="94" selection-start-column="37" selection-end-line="94" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -71,8 +69,8 @@
         <option value="$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Perfil.java" />
         <option value="$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Usuario.java" />
         <option value="$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Comentario.java" />
-        <option value="$PROJECT_DIR$/src/main/java/projeto/backend/rest/services/PerfilService.java" />
         <option value="$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/DisciplinaController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/projeto/backend/rest/services/PerfilService.java" />
       </list>
     </option>
   </component>
@@ -185,12 +183,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1562023645736</updated>
-      <workItem from="1562023647779" duration="6734000" />
+      <workItem from="1562023647779" duration="7041000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6734000" />
+    <option name="totallyTimeSpent" value="7041000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
@@ -272,17 +270,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/services/PerfilService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/DisciplinaController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="93" column="147" selection-start-line="93" selection-start-column="147" selection-end-line="93" selection-end-column="147" />
+        <state relative-caret-position="450">
+          <caret line="143" column="118" selection-start-line="143" selection-start-column="118" selection-end-line="143" selection-end-column="118" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/DisciplinaController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/services/PerfilService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="143" column="118" selection-start-line="143" selection-start-column="118" selection-end-line="143" selection-end-column="118" />
+        <state relative-caret-position="217">
+          <caret line="94" column="37" selection-start-line="94" selection-start-column="37" selection-end-line="94" selection-end-column="37" />
         </state>
       </provider>
     </entry>
