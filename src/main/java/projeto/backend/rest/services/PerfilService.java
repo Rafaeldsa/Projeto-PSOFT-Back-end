@@ -58,7 +58,7 @@ public class PerfilService {
         Usuario user = userService.findByLogin(uEmail);
         Perfil p = perfilDAO.findById(id);
         p.setCurtidas(user);
-        p.getUserLIke(user);
+        p.setFLag(user);
         return perfilDAO.save(p);
     }
 /*

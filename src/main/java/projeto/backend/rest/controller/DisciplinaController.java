@@ -23,12 +23,14 @@ public class DisciplinaController {
     private DisciplinaService disciplinaService;
     private PerfilService perfilService;
     private ComentarioService comentarioService;
+    private ComparaLike comparator;
 
     DisciplinaController(DisciplinaService disciplinaService, PerfilService perfilService, UserService userService, ComentarioService comentarioService) {
         this.perfilService = perfilService;
         this.disciplinaService = disciplinaService;
         this.userService = userService;
         this.comentarioService = comentarioService;
+        this.comparator = new ComparaLike();
     }
 
     @GetMapping(value = "/allSubjects")
@@ -154,7 +156,7 @@ public class DisciplinaController {
     }
 
     @PostMapping(value = "/addResposta")
-    public ResponseEntity<Perfil> resposta(@RequestParam(name = "id", required = false, defaultValue = "") long idPerfil, @RequestParam(name = "id", required = false, defaultValue = "") long idComentario,@RequestBody Comentario comentarioResposta, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
+    public ResponseEntity<Perfil> resposta(@RequestParam(name = "id", required = false, defaultValue = "") int idPerfil, @RequestParam(name = "id", required = false, defaultValue = "") int idComentario,@RequestBody Comentario comentarioResposta, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
         ZonedDateTime date = ZonedDateTime.now(ZoneId.of("America/Sao_Paulo"));
         String data = DateTimeFormatter.ofPattern("dd/MM/yyyy").format(date);
         String hora = DateTimeFormatter.ofPattern("hh:mm").format(date);
@@ -177,6 +179,17 @@ public class DisciplinaController {
         perfilService.save(perfil);
         try {
             return new ResponseEntity<Perfil>(perfil, HttpStatus.OK);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
+    }
+
+    @GetMapping(value = "/ranking")
+    public ResponseEntity<List> ranking() {
+            List<Perfil> result = perfilService.findAll();
+            result.sort(this.comparator);
+      try {
+            return ResponseEntity.status(HttpStatus.OK).body(result);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
