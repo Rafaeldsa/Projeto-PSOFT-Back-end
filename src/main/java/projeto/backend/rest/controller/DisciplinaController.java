@@ -118,10 +118,10 @@ public class DisciplinaController {
     }
 
     @DeleteMapping(value = "deleteComentario")
-    public ResponseEntity<String> deleteComentario(@RequestParam(name = "id", required = false, defaultValue = "") int idPerfil, @RequestParam(name = "id", required = false, defaultValue = "") int idComentario, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
+    public ResponseEntity<Perfil> deleteComentario(@RequestParam(name = "id", required = false, defaultValue = "") int idPerfil, @RequestParam(name = "id", required = false, defaultValue = "") int idComentario, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
         Perfil p = perfilService.deleteComentario(idPerfil, idComentario, authorization);
         try {
-            return new ResponseEntity<String>("Comentário deletado com sucesso", HttpStatus.CREATED);
+            return new ResponseEntity<Perfil>(p, HttpStatus.OK);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
