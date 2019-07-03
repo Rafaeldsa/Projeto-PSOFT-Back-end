@@ -312,7 +312,7 @@ public class DisciplinaController {
         }
 
     }
-
+/*
     @ApiOperation(
             value="Resposta a comentário.",
             response=Disciplina.class,
@@ -357,7 +357,7 @@ public class DisciplinaController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
     }
-
+*/
     @ApiOperation(
             value="Ranking por like.",
             response=Disciplina.class,
