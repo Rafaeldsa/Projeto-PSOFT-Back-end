@@ -9,6 +9,6 @@ public class ComparatorComentarioId implements Comparator<Comentario>, Serializa
 
     @Override
     public int compare(Comentario o1, Comentario o2) {
-        return (int) (o2.getId() - o1.getId());
+        return (int) (o1.getId() - o2.getId());
     }
 }
