@@ -70,7 +70,8 @@ public class PerfilService {
         Perfil p = perfilDAO.findById(idPerfil);
         Comentario c = comentarioService.findById(idComentario);
         p.setUserAtual(u);
-        p.getComentarios().remove(c);
+        c.setComentario("");
+        comentarioService.save(c);
         perfilDAO.save(p);
 
         return p;

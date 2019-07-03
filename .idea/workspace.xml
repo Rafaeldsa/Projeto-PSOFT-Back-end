@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2eb243ca-7bdd-4df8-93f4-009af595c55f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/DisciplinaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/DisciplinaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Perfil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Perfil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/services/PerfilService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/backend/rest/services/PerfilService.java" afterDir="false" />
-    </list>
+    <list default="true" id="2eb243ca-7bdd-4df8-93f4-009af595c55f" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,7 +15,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/DisciplinaController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="132">
@@ -28,7 +24,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/services/PerfilService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="233">
@@ -249,15 +245,15 @@
       <workItem from="1562096978421" duration="1872000" />
       <workItem from="1562099158669" duration="7740000" />
       <workItem from="1562108337732" duration="4816000" />
-      <workItem from="1562127044201" duration="3071000" />
+      <workItem from="1562127044201" duration="3519000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35081000" />
+    <option name="totallyTimeSpent" value="35529000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1366" height="743" extended-state="6" />
+    <frame x="0" y="25" width="1366" height="743" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25454545" />
@@ -462,17 +458,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/DisciplinaController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="164" column="39" selection-start-line="164" selection-start-column="39" selection-end-line="164" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/services/PerfilService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="233">
           <caret line="72" column="37" lean-forward="true" selection-start-line="72" selection-start-column="37" selection-end-line="72" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/DisciplinaController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="164" column="39" selection-start-line="164" selection-start-column="39" selection-end-line="164" selection-end-column="39" />
         </state>
       </provider>
     </entry>
