@@ -2,9 +2,7 @@ package projeto.backend.rest.controller;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
+import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import projeto.backend.rest.model.Usuario;
@@ -66,8 +64,9 @@ public class LoginController {
 
     }
 
-
+    @ApiModel("LoginResponse -> Representa a resposta da autenticação")
     private class LoginResponse {
+        @ApiModelProperty(value = "Representa um token de autenticação do usuário")
         public String token;
 
         public LoginResponse(String token) {

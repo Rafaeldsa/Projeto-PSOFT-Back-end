@@ -23,6 +23,7 @@ public class SwaggerConfig {
         docket
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("projeto.backend.rest.controller"))
+               // .apis(RequestHandlerSelectors.basePackage("projeto.backend.rest.model"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(this.informacoesApi().build());

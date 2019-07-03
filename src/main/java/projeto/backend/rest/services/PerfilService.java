@@ -62,6 +62,16 @@ public class PerfilService {
         p.setUserAtual(user);
         return perfilDAO.save(p);
     }
+    public Perfil getPerfil(long id, String authorization) throws ServletException  {
+        Perfil perfil = perfilDAO.findById(id);
+        TokenFilter tk = new TokenFilter();
+        String uEmail = tk.getAuth(authorization);
+        Usuario u = userService.findByLogin(uEmail);
+        perfil.setUserAtual(u);
+
+        return  perfil;
+
+    }
 
     public Perfil deleteComentario(long idPerfil,long idComentario, String authorization) throws ServletException{
         TokenFilter tk = new TokenFilter();
@@ -69,8 +79,14 @@ public class PerfilService {
         Usuario u = userService.findByLogin(uEmail);
         Perfil p = perfilDAO.findById(idPerfil);
         Comentario c = comentarioService.findById(idComentario);
-        p.setUserAtual(u);
-        c.setComentario("");
+        if (c == null) {
+            throw new RuntimeException("Comentário não existe!");
+        }
+        if (!(c.getUsuario().equals(u))) {
+            throw new RuntimeException("Esse comentário não pertece a este usuário.");
+        }
+        c.setApagado(true);
+
         comentarioService.save(c);
         perfilDAO.save(p);
 

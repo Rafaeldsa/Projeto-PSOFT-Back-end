@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.util.List;
 import java.time.ZoneId;
 
-
+@Data
 @Entity
 public class Comentario {
 
@@ -24,7 +24,9 @@ public class Comentario {
    private String date;
    private String hora;
 
-   @OneToMany
+
+   public boolean apagado;
+   @OneToMany(cascade=CascadeType.ALL)
    private List<Comentario> comentarioDocomentario;
 
    public Comentario(){
@@ -85,5 +87,39 @@ public class Comentario {
       this.hora = hora;
    }
 
+   public int getQtdResposta() {
+      int result = 0;
+      if (!getComentarioDocomentario().isEmpty() && !isApagado()) {
+         result = qtdRecursivo(this);
+      }
 
+      return result;
+   }
+
+
+   private int qtdRecursivo(Comentario comentario) {
+      int result = 0;
+      if (!comentario.getComentarioDocomentario().isEmpty()) {
+         for (Comentario c : comentario.getComentarioDocomentario()) {
+            if (!c.isApagado())
+               result += 1 + qtdRecursivo(c);
+         }
+      }
+      return result;
+   }
+
+   public void setApagado(boolean apagado) {
+      this.apagado = apagado;
+      if (!getComentarioDocomentario().isEmpty()) {
+         apagaRecursivo(getComentarioDocomentario());
+      }
+   }
+
+   private void apagaRecursivo(List<Comentario> respostas) {
+      if (!respostas.isEmpty()) {
+         for (Comentario r : respostas) {
+            r.setApagado(true);
+         }
+      }
+   }
 }

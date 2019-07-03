@@ -1,4 +1,4 @@
-package projeto.backend.rest.controller;
+package projeto.backend.rest.Comparators;
 
 import projeto.backend.rest.model.Perfil;
 
