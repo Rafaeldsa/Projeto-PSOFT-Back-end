@@ -1,6 +1,7 @@
 package projeto.backend.rest.controller;
 
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.http.HttpStatus;
@@ -40,7 +41,7 @@ public class UsuarioController {
     })
         @PostMapping(value = "/")
         @ResponseBody
-        public ResponseEntity<Usuario> create(@RequestBody Usuario user) {
+        public ResponseEntity<Usuario> create(@ApiParam("Representa um usuario") @RequestBody Usuario user) {
 
             Usuario newUser = userService.create(user);
 

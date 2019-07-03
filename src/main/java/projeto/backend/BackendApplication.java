@@ -24,19 +24,20 @@ public class BackendApplication {
 		bean.setOrder(0);
 		return bean;
 	}
-/*
+
 	@Bean
 	public FilterRegistrationBean filterJwt() {
 		FilterRegistrationBean filterRb = new FilterRegistrationBean();
 		filterRb.setFilter(new TokenFilter());
-//		filterRb.addUrlPatterns("/v1/disciplina/getPerfil");
-//		filterRb.addUrlPatterns("/v1/disciplina/ranking");
-//		filterRb.addUrlPatterns("/v1/disciplina/addComentario");
-//		filterRb.addUrlPatterns("/v1/disciplina/like");
+		filterRb.addUrlPatterns("/v1/disciplina/getPerfil");
+		filterRb.addUrlPatterns("/v1/disciplina/rankingLike");
+		filterRb.addUrlPatterns("/v1/disciplina/rankingComentario");
+		filterRb.addUrlPatterns("/v1/disciplina/addComentario");
+		filterRb.addUrlPatterns("/v1/disciplina/like");
 
 
 		return filterRb;
-	}*/
+	}
 
 	public static void main(String[] args) {
 
