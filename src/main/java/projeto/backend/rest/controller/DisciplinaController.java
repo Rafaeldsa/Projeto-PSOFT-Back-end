@@ -2,6 +2,9 @@ package projeto.backend.rest.controller;
 
 
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -37,7 +40,23 @@ public class DisciplinaController {
         this.comparadorRanking = new ComparaLike();
         this.comparadorComentario = new ComparatorComentario();
     }
+    @ApiOperation(
+            value="Realiza a criação a partir de um json passado.",
+            response=Disciplina.class,
+            notes="Essa método realiza a autenticação de um usuário previamente cadastrado.")
+    @ApiResponses(value= {
+            @ApiResponse(
+                    code=200,
+                    message="Retorna uma lista com todas as disciplinas criadas.",
+                    response=Disciplina.class
+            ),
+            @ApiResponse(
+                    code=500,
+                    message="Caso tenhamos algum erro, retornará uma BAD_REQUEST."
 
+            )
+
+    })
     @GetMapping(value = "/allSubjects")
     public ResponseEntity<List<Disciplina>> findAllSubject() {
 
@@ -115,7 +134,7 @@ public class DisciplinaController {
         return new ResponseEntity<Perfil>(perfil, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/addComentario")
+    @PostMapping(value = "/addComentario")
     public ResponseEntity<String> comentar(@RequestParam(name = "id", required = false, defaultValue = "") int id, @RequestBody Comentario comentario, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
         ZonedDateTime date = ZonedDateTime.now(ZoneId.of("America/Sao_Paulo"));
         String data = DateTimeFormatter.ofPattern("dd/MM/yyyy").format(date);
@@ -140,9 +159,9 @@ public class DisciplinaController {
         }
 
     }
-/*
+
     @DeleteMapping(value = "deleteComentario")
-    public ResponseEntity<Perfil> deleteComentario(@RequestParam(name = "id", required = false, defaultValue = "") long idPerfil, @RequestParam(name = "id", required = false, defaultValue = "") long idComentario, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
+    public ResponseEntity<Perfil> deleteComentario(@RequestParam(name = "idPerfil", required = false, defaultValue = "") long idPerfil, @RequestParam(name = "idComentario", required = false, defaultValue = "") long idComentario, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
         Perfil p = perfilService.deleteComentario(idPerfil, idComentario, authorization);
         try {
             return new ResponseEntity<Perfil>(p, HttpStatus.OK);
@@ -151,7 +170,7 @@ public class DisciplinaController {
         }
 
     }
-*/
+
     @PutMapping(value = "/like")
     public ResponseEntity<Perfil> darLike(@RequestParam(name = "id", required = false, defaultValue = "") long id, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
         Perfil p = perfilService.like(id, authorization);
@@ -164,7 +183,7 @@ public class DisciplinaController {
     }
 
     @PostMapping(value = "/addResposta")
-    public ResponseEntity<Perfil> resposta(@RequestParam(name = "id", required = false, defaultValue = "") int idPerfil, @RequestParam(name = "id", required = false, defaultValue = "") int idComentario,@RequestBody Comentario comentarioResposta, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
+    public ResponseEntity<Perfil> resposta(@RequestParam(name = "idPerfil", required = false, defaultValue = "") int idPerfil, @RequestParam(name = "idComentario", required = false, defaultValue = "") int idComentario,@RequestBody Comentario comentarioResposta, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
         ZonedDateTime date = ZonedDateTime.now(ZoneId.of("America/Sao_Paulo"));
         String data = DateTimeFormatter.ofPattern("dd/MM/yyyy").format(date);
         String hora = DateTimeFormatter.ofPattern("hh:mm").format(date);
