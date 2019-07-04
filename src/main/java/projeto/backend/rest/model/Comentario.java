@@ -1,5 +1,7 @@
 package projeto.backend.rest.model;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 
@@ -8,24 +10,28 @@ import javax.persistence.*;
 import java.util.List;
 import java.time.ZoneId;
 
+@ApiModel("Comentário -> Representa uma classe que representa uma entidade comentário.")
 @Data
 @Entity
 public class Comentario {
 
-
+   @ApiModelProperty("Representa o id do Comentário.")
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private long id;
 
+   @ApiModelProperty("Representa o usuário que realizou o Comentário.")
    @OneToOne
    private Usuario usuario;
-
+   @ApiModelProperty("Representa o texto do Comentário.")
    private String comentario;
+   @ApiModelProperty("Representa a data do Comentário.")
    private String date;
+   @ApiModelProperty("Representa a hora do Comentário.")
    private String hora;
-
-
+   @ApiModelProperty("Representa o status de um Comentário, se ele foi deletado ou não.")
    public boolean apagado;
+   @ApiModelProperty("Representa um conjunto de respotas do Comentário.")
    @OneToMany(cascade=CascadeType.ALL)
    private List<Comentario> comentarioDocomentario;
 

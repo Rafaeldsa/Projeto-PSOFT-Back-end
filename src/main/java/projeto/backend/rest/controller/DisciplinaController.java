@@ -209,7 +209,7 @@ public class DisciplinaController {
             )
     })
     @GetMapping(value = "/getPerfil")
-    public ResponseEntity<Perfil> findById(@ApiParam("Representa o id de um Perfil")@RequestParam(name = "id", required = false, defaultValue = "") long id, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
+    public ResponseEntity<Perfil> findById(@ApiParam("Representa o id de um Perfil")@RequestParam(name = "id", required = false, defaultValue = "") long id, @ApiParam("Representa o token para autorização")@RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
         Perfil perfil = perfilService.getPerfil(id, authorization);
 
         if (perfil == null) {
@@ -235,7 +235,7 @@ public class DisciplinaController {
             )
     })
     @PostMapping(value = "/addComentario")
-    public ResponseEntity<String> comentar(@RequestParam(name = "id", required = false, defaultValue = "") int id, @RequestBody Comentario comentario, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
+    public ResponseEntity<String> comentar(@ApiParam("Representa o id de um Perfil")@RequestParam(name = "id", required = false, defaultValue = "") int id, @RequestBody Comentario comentario, @ApiParam("Representa o token para autorização")@RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
         ZonedDateTime date = ZonedDateTime.now(ZoneId.of("America/Sao_Paulo"));
         String data = DateTimeFormatter.ofPattern("dd/MM/yyyy").format(date);
         String hora = DateTimeFormatter.ofPattern("hh:mm").format(date);
@@ -277,7 +277,7 @@ public class DisciplinaController {
             )
     })
     @DeleteMapping(value = "deleteComentario")
-    public ResponseEntity<Perfil> deleteComentario(@RequestParam(name = "idPerfil", required = false, defaultValue = "") long idPerfil, @RequestParam(name = "idComentario", required = false, defaultValue = "") long idComentario, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
+    public ResponseEntity<Perfil> deleteComentario(@ApiParam("Representa o id de um Perfil")@RequestParam(name = "idPerfil", required = false, defaultValue = "") long idPerfil,@ApiParam("Representa o id de um Comentário.") @RequestParam(name = "idComentario", required = false, defaultValue = "") long idComentario, @ApiParam("Representa o token para autorização")@RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
         Perfil p = perfilService.deleteComentario(idPerfil, idComentario, authorization);
         try {
             return new ResponseEntity<Perfil>(p, HttpStatus.OK);
@@ -304,7 +304,7 @@ public class DisciplinaController {
             )
     })
     @PutMapping(value = "/like")
-    public ResponseEntity<Perfil> darLike(@RequestParam(name = "id", required = false, defaultValue = "") long id, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
+    public ResponseEntity<Perfil> darLike(@ApiParam("Representa o id de um Perfil")@RequestParam(name = "id", required = false, defaultValue = "") long id, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
         Perfil p = perfilService.like(id, authorization);
         try {
             return new ResponseEntity<Perfil>(p, HttpStatus.OK);
@@ -331,7 +331,7 @@ public class DisciplinaController {
             )
     })
     @PostMapping(value = "/addResposta")
-    public ResponseEntity<Perfil> resposta(@RequestParam(name = "idPerfil", required = false, defaultValue = "") int idPerfil, @RequestParam(name = "idComentario", required = false, defaultValue = "") int idComentario,@RequestBody Comentario comentarioResposta, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
+    public ResponseEntity<Perfil> resposta(@ApiParam("Representa o id de um Perfil")@RequestParam(name = "idPerfil", required = false, defaultValue = "") int idPerfil, @RequestParam(name = "idComentario", required = false, defaultValue = "") int idComentario,@RequestBody Comentario comentarioResposta, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
         ZonedDateTime date = ZonedDateTime.now(ZoneId.of("America/Sao_Paulo"));
         String data = DateTimeFormatter.ofPattern("dd/MM/yyyy").format(date);
         String hora = DateTimeFormatter.ofPattern("hh:mm").format(date);
