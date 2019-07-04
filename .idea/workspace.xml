@@ -34,30 +34,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/services/PerfilService.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Perfil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="80" column="15" lean-forward="true" selection-start-line="80" selection-start-column="15" selection-end-line="80" selection-end-column="15" />
+            <state relative-caret-position="128">
+              <caret line="94" column="18" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Perfil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="94" column="15" selection-start-line="94" selection-start-column="15" selection-end-line="94" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/Comparators/ComparaComentario.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+              <caret line="8" column="46" lean-forward="true" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#340#341#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -94,7 +86,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/projeto/backend/rest/Comparators/ComparatorComentarioId.java" />
         <option value="$PROJECT_DIR$/src/main/java/projeto/backend/BackendApplication.java" />
-        <option value="$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Perfil.java" />
         <option value="$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Comentario.java" />
         <option value="$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/SwaggerConfig.java" />
         <option value="$PROJECT_DIR$/README.md" />
@@ -103,6 +94,7 @@
         <option value="$PROJECT_DIR$/src/main/java/projeto/backend/rest/services/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/projeto/backend/rest/controller/DisciplinaController.java" />
         <option value="$PROJECT_DIR$/src/main/java/projeto/backend/rest/services/PerfilService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Perfil.java" />
         <option value="$PROJECT_DIR$/src/main/java/projeto/backend/rest/Comparators/ComparaComentario.java" />
       </list>
     </option>
@@ -272,18 +264,18 @@
       <workItem from="1562108337732" duration="4816000" />
       <workItem from="1562127044201" duration="21364000" />
       <workItem from="1562194730883" duration="7493000" />
-      <workItem from="1562205511848" duration="3830000" />
+      <workItem from="1562205511848" duration="4669000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64697000" />
+    <option name="totallyTimeSpent" value="65536000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20075758" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20075758" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -301,7 +293,7 @@
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="Run" order="11" visible="true" weight="0.32899022" />
+      <window_info active="true" anchor="bottom" id="Run" order="11" visible="true" weight="0.32899022" />
       <window_info anchor="bottom" id="TODO" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -476,15 +468,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/services/PerfilService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
+        <state relative-caret-position="113">
           <caret line="80" column="15" lean-forward="true" selection-start-line="80" selection-start-column="15" selection-end-line="80" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Comentario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-975">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -495,20 +480,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/Comparators/ComparaComentario.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Perfil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="128">
+          <caret line="94" column="18" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Perfil.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/model/Comentario.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="94" column="15" selection-start-line="94" selection-start-column="15" selection-end-line="94" selection-end-column="15" />
+        <state relative-caret-position="-975">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/projeto/backend/rest/Comparators/ComparaComentario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="46" lean-forward="true" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#340#341#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
