@@ -4,8 +4,7 @@
 ## Link para o Front-end
 https://github.com/joaobb/Projeto-PSOFT-Front-end
 
-## Link para cadastrar um usuario
-https://ucdb-plataform1.herokuapp.com/api/v1/users/
+##Link para a Documentação Swagger
+https://ucdb-plataform1.herokuapp.com/api/swagger-ui.html#/
 
-## Link para listar todos os usuarios
-https://ucdb-plataform1.herokuapp.com/api/v1/users/all
+##Link para o vide de demonstração
