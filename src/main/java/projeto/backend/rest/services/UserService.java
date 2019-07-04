@@ -1,19 +1,21 @@
 package projeto.backend.rest.services;
 
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.stereotype.Service;
 import projeto.backend.rest.dao.UserDAO;
 
 
 import projeto.backend.rest.model.Usuario;
-
-import java.io.FileNotFoundException;
+import java.sql.SQLException;
 import java.util.List;
+import java.util.Properties;
 
 @Service
 public class UserService {
 
     private final UserDAO userDAO;
-
+    private JavaMailSenderImpl javaMailSender;
 
     UserService(UserDAO userDAO)  {
         this.userDAO = userDAO;
@@ -54,5 +56,26 @@ public class UserService {
         return userDAO.findAll();
     }
 
+    public void enviaEmail()  {
+        Properties props = new Properties();
 
+        //Parâmetros de conexão com servidor Gmail
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.socketFactory.port", "465");
+        props.put("mail.smtp.socketFactory.class",
+                "javax.net.ssl.SSLSocketFactory");
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.port", "465");
+        javaMailSender.setUsername("ucdbplatform@gmail.com");
+        javaMailSender.setPassword("ap1r3st1");
+        javaMailSender.setJavaMailProperties(props);
+
+        //criando email
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setText("Hello from Spring Boot Application");
+        message.setTo("rafael.azevedo@ccc.ufcg.edu.br");
+        message.setFrom("no-reply@ucdb.api");
+
+        javaMailSender.send(message);
+    }
 }
