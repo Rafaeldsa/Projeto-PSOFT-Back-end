@@ -92,7 +92,7 @@ public class Perfil {
         return this.curtidas.contains(user);
     }
 
-    public int QtdComentario(){
+    public int getQtdComentario(){
         int result = 0;
         if(!getComentarios().isEmpty()){
             result = qtdRecursivo(this);
