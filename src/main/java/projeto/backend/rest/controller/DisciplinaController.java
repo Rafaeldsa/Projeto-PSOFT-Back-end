@@ -405,15 +405,8 @@ public class DisciplinaController {
     })
     @GetMapping(value = "/rankingComentario")
     public ResponseEntity<List> rankingComentario() {
-        List<Perfil> perfis = perfilService.findAll();
-        List<Perfil> result = new ArrayList<>();
-        for(Perfil p : perfis) {
-            for(Comentario c : p.getComentarios()) {
-                if(!c.isApagado()) {
-                    result.add(p);
-                }
-            }
-        }
+        List<Perfil> result = perfilService.findAll();
+
         this.comparadorRanking = new ComparaComentario();
         result.sort(this.comparadorRanking);
         try {

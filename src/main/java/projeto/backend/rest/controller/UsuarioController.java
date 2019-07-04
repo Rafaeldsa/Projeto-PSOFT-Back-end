@@ -44,7 +44,7 @@ public class UsuarioController {
         public ResponseEntity<Usuario> create(@ApiParam("Representa um usuario") @RequestBody Usuario user) {
 
             Usuario newUser = userService.create(user);
-            
+
 
             if (newUser == null) {
                 throw new InternalError("Something went wrong");

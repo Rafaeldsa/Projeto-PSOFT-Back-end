@@ -44,7 +44,7 @@ public class UserService {
         if (!(userVerify == null)) {
             throw new RuntimeException("Email Já Cadastrado");
         }
-
+        enviaEmail(usuario);
         return userDAO.save(usuario);
     }
 
@@ -56,7 +56,7 @@ public class UserService {
         return userDAO.findAll();
     }
 
-    public void enviaEmail()  {
+    public void enviaEmail(Usuario usuario)  {
         Properties props = new Properties();
 
         //Parâmetros de conexão com servidor Gmail
@@ -73,8 +73,8 @@ public class UserService {
         //criando email
         SimpleMailMessage message = new SimpleMailMessage();
         message.setText("Hello from Spring Boot Application");
-        message.setTo("rafael.azevedo@ccc.ufcg.edu.br");
-        message.setFrom("no-reply@ucdb.api");
+        message.setTo(usuario.getEmail());
+        message.setFrom("ucdbplatform@gmail.com");
 
         javaMailSender.send(message);
     }
