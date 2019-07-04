@@ -129,7 +129,7 @@ public class Comentario {
       }
    }
 
-   public int getQtdsComentarios() {
+   public int QtdsComentarios() {
       int result = 0;
       if(!getComentarioDocomentario().isEmpty()){
          for(Comentario c : this.getComentarioDocomentario()) {

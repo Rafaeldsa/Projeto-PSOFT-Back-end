@@ -118,7 +118,7 @@ public class Perfil {
                if(!c.isApagado()) {
                    result++;
                    if(!c.getComentarioDocomentario().isEmpty()) {
-                       result += c.getQtdsComentarios();
+                       result += c.QtdsComentarios();
                    }
                }
             }
