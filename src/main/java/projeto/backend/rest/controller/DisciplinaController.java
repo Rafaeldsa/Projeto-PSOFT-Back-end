@@ -33,7 +33,7 @@ public class DisciplinaController {
     private PerfilService perfilService;
     private ComentarioService comentarioService;
     private Comparator<Perfil> comparadorRanking;
-    private ComparatorComentarioId comparadorComentario;
+    private ComparatorComentarioId comparadorComentarioId;
 
     DisciplinaController(DisciplinaService disciplinaService, PerfilService perfilService, UserService userService, ComentarioService comentarioService) {
         this.perfilService = perfilService;
@@ -41,7 +41,7 @@ public class DisciplinaController {
         this.userService = userService;
         this.comentarioService = comentarioService;
         this.comparadorRanking = new ComparaLike();
-        this.comparadorComentario = new ComparatorComentarioId();
+        this.comparadorComentarioId = new ComparatorComentarioId();
     }
     @ApiOperation(
             value="Lista todas as disciplinas.",
@@ -249,7 +249,7 @@ public class DisciplinaController {
         comentarioService.save(c);
         Perfil p = perfilService.findById(id);
         p.setComentarios(c);
-        p.getComentarios().sort(this.comparadorComentario);
+        p.getComentarios().sort(this.comparadorComentarioId);
 
         perfilService.save(p);
         try {
@@ -348,9 +348,10 @@ public class DisciplinaController {
         comentarioResposta.setDate(data);
         comentarioResposta.setHora(hora);
 
-        c.setComentarioDocomentario(comentarioResposta);
 
+        c.setComentarioDocomentario(comentarioResposta);
         comentarioService.save(c);
+        c.getComentarioDocomentario().sort(this.comparadorComentarioId);
         perfilService.save(perfil);
         try {
             return new ResponseEntity<Perfil>(perfil, HttpStatus.OK);
