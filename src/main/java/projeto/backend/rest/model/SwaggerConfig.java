@@ -23,7 +23,6 @@ public class SwaggerConfig {
         docket
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("projeto.backend.rest.controller"))
-               // .apis(RequestHandlerSelectors.basePackage("projeto.backend.rest.model"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(this.informacoesApi().build());
@@ -36,7 +35,7 @@ public class SwaggerConfig {
         ApiInfoBuilder apiInfoBuilder = new ApiInfoBuilder();
 
         apiInfoBuilder.title("API-Ucdb");
-        apiInfoBuilder.description("API para os Usuários discutir sobre as disciplinas do curso de Ciência da Computação da UFCG.");
+        apiInfoBuilder.description("API para os usuários discutirem sobre as disciplinas do curso de Ciência da Computação da UFCG.");
         apiInfoBuilder.version("1.0");
         apiInfoBuilder.termsOfServiceUrl("Termo de uso: Deve ser usada para diversão!.");
         apiInfoBuilder.license("Licença - Open Source");
