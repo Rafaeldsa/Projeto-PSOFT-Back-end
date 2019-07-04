@@ -128,4 +128,17 @@ public class Comentario {
          }
       }
    }
+
+   public int getQtdsComentarios() {
+      int result = 0;
+      if(!getComentarioDocomentario().isEmpty()){
+         for(Comentario c : this.getComentarioDocomentario()) {
+            if(!c.isApagado()) {
+               result++;
+            }
+         }
+
+      }
+      return result;
+   }
 }

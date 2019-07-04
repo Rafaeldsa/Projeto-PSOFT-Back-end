@@ -7,6 +7,6 @@ import java.io.Serializable;
 public class ComparaComentario implements java.util.Comparator<Perfil>, Serializable {
     @Override
     public int compare(Perfil o1, Perfil o2) {
-        return o2.getQtdComentario() - o1.getQtdComentario();
+        return o2.getQtdsComentarios() - o1.getQtdsComentarios();
     }
 }

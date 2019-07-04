@@ -44,7 +44,6 @@ public class UserService {
         if (!(userVerify == null)) {
             throw new RuntimeException("Email Já Cadastrado");
         }
-        enviaEmail(usuario);
         return userDAO.save(usuario);
     }
 

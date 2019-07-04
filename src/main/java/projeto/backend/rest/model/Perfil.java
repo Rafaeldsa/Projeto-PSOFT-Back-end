@@ -92,7 +92,7 @@ public class Perfil {
         return this.curtidas.contains(user);
     }
 
-    public int getQtdComentario(){
+    public int QtdComentario(){
         int result = 0;
         if(!getComentarios().isEmpty()){
             result = qtdRecursivo(this);
@@ -108,6 +108,21 @@ public class Perfil {
                     result += 1 + c.contaResposta();
                 }
             }
+        }
+        return result;
+    }
+    public int getQtdsComentarios() {
+        int result = 0;
+        if(!getComentarios().isEmpty()){
+            for(Comentario c : this.getComentarios()) {
+               if(!c.isApagado()) {
+                   result++;
+                   if(!c.getComentarioDocomentario().isEmpty()) {
+                       result += c.getQtdsComentarios();
+                   }
+               }
+            }
+
         }
         return result;
     }
