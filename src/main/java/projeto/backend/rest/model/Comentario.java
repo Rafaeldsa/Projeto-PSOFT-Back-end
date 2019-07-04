@@ -87,7 +87,7 @@ public class Comentario {
       this.hora = hora;
    }
 
-   public int getQtdResposta() {
+   public int contaResposta() {
       int result = 0;
       if (!getComentarioDocomentario().isEmpty() && !isApagado()) {
          result = qtdRecursivo(this);

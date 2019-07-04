@@ -3,6 +3,7 @@ package projeto.backend.rest.controller;
 
 
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.http.HttpStatus;
@@ -88,7 +89,7 @@ public class DisciplinaController {
 
     })
     @GetMapping(value = "/findSubjects")
-    public ResponseEntity<List<Disciplina>> findDisciplina(@RequestParam(name = "substring", required = false, defaultValue = "") String substring) {
+    public ResponseEntity<List<Disciplina>> findDisciplina(@ApiParam("Representa a substring a ser pesquisada")@RequestParam(name = "substring", required = false, defaultValue = "") String substring) {
 
         if (substring == null || substring.trim().equals("")) {
             throw new InternalError("Something went wrong");
@@ -122,7 +123,7 @@ public class DisciplinaController {
 
     })
     @PostMapping(value = "/createSubject")
-    public ResponseEntity<List<Disciplina>> create(@RequestBody List<Disciplina> listDisciplina) {
+    public ResponseEntity<List<Disciplina>> create(@ApiParam("Representa um conjunto de disciplinas")@RequestBody List<Disciplina> listDisciplina) {
         List<Disciplina> result = disciplinaService.createAll(listDisciplina);
 
         if (listDisciplina.isEmpty()) {
@@ -208,7 +209,7 @@ public class DisciplinaController {
             )
     })
     @GetMapping(value = "/getPerfil")
-    public ResponseEntity<Perfil> findById(@RequestParam(name = "id", required = false, defaultValue = "") long id, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
+    public ResponseEntity<Perfil> findById(@ApiParam("Representa o id de um Perfil")@RequestParam(name = "id", required = false, defaultValue = "") long id, @RequestHeader(name = "authorization", required = false, defaultValue = "") String authorization) throws ServletException {
         Perfil perfil = perfilService.getPerfil(id, authorization);
 
         if (perfil == null) {

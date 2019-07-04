@@ -92,7 +92,7 @@ public class Perfil {
         return this.curtidas.contains(user);
     }
 
-    public int getQtdComentario(){
+    public int QtdComentario(){
         int result = 0;
         if(!getComentarios().isEmpty()){
             result = qtdRecursivo(this);
@@ -105,7 +105,7 @@ public class Perfil {
         if(!perfil.getComentarios().isEmpty()){
             for (Comentario c: perfil.getComentarios()) {
                 if(!c.isApagado()) {
-                    result += 1 + c.getQtdResposta();
+                    result += 1 + c.contaResposta();
                 }
             }
         }
